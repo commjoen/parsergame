@@ -53,10 +53,38 @@ class ParserGame {
     }
     
     generateGameSentences() {
-        // Get all sentences for current language and create a randomized subset
+        // Get all sentences for current language and create a randomized subset with no duplicates
         const allSentences = sentences[this.currentLanguage] || sentences.en;
-        const shuffled = [...allSentences].sort(() => 0.5 - Math.random());
-        this.availableSentences = shuffled.slice(0, this.totalQuestions);
+        
+        // Use Fisher-Yates shuffle for better randomization
+        const shuffled = [...allSentences];
+        for (let i = shuffled.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        }
+        
+        // Ensure we don't have more questions than unique sentences
+        const maxQuestions = Math.min(this.totalQuestions, shuffled.length);
+        
+        // Create unique sentence set by text to prevent duplicates
+        const uniqueSentences = [];
+        const seenTexts = new Set();
+        
+        for (let i = 0; i < shuffled.length && uniqueSentences.length < maxQuestions; i++) {
+            const sentence = shuffled[i];
+            if (!seenTexts.has(sentence.text)) {
+                seenTexts.add(sentence.text);
+                uniqueSentences.push(sentence);
+            }
+        }
+        
+        this.availableSentences = uniqueSentences;
+        
+        // Update total questions if we couldn't get enough unique sentences
+        if (uniqueSentences.length < this.totalQuestions) {
+            console.warn(`Only ${uniqueSentences.length} unique sentences available for ${this.currentLanguage}, reducing total questions`);
+            this.totalQuestions = uniqueSentences.length;
+        }
     }
     
     bindEvents() {
