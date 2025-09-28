@@ -1,0 +1,34 @@
+{
+  "name": "parsergame",
+  "version": "1.0.0",
+  "description": "An interactive web-based game to learn sentence parsing and grammatical analysis in English, German, and Dutch",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -s . -l 3000",
+    "dev": "serve -s . -l 8000",
+    "test": "node test/run-tests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/commjoen/parsergame.git"
+  },
+  "keywords": [
+    "education",
+    "grammar",
+    "parsing",
+    "game",
+    "javascript",
+    "html",
+    "css"
+  ],
+  "author": "commjoen",
+  "license": "GPL-3.0",
+  "homepage": "https://commjoen.github.io/parsergame/",
+  "dependencies": {
+    "serve": "^14.2.3"
+  },
+  "devDependencies": {},
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
