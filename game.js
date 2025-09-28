@@ -119,6 +119,11 @@ class ParserGame {
         document.getElementById('sourceLink').textContent = t.sourceLink;
         document.getElementById('copyright').textContent = t.copyright;
         
+        // Update version info
+        if (typeof APP_VERSION !== 'undefined') {
+            document.getElementById('versionInfo').textContent = formatString(t.version, APP_VERSION);
+        }
+        
         // Update settings modal translations
         if (t.settings) {
             document.getElementById('settingsTitle').textContent = t.settings.title;

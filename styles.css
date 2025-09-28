@@ -332,6 +332,12 @@ footer {
     text-decoration: underline;
 }
 
+.version-info {
+    font-size: 0.9em;
+    color: #718096;
+    font-style: italic;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
