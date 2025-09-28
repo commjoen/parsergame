@@ -34,7 +34,8 @@ async function runTests() {
       'game.js',
       'sentences.js',
       'translations.js',
-      'styles.css'
+      'styles.css',
+      'version.js'
     ];
 
     for (const file of requiredFiles) {
@@ -43,7 +44,7 @@ async function runTests() {
     }
 
     // Test 2: Validate JavaScript syntax
-    const jsFiles = ['game.js', 'sentences.js', 'translations.js'];
+    const jsFiles = ['game.js', 'sentences.js', 'translations.js', 'version.js'];
     for (const file of jsFiles) {
       try {
         const filePath = path.join(__dirname, '..', file);
@@ -106,6 +107,7 @@ async function runTests() {
       
       assert(indexContent.includes('<!DOCTYPE html>'), 'index.html has DOCTYPE declaration');
       assert(indexContent.includes('<html'), 'index.html has html element');
+      assert(indexContent.includes('version.js'), 'index.html includes version.js');
       assert(indexContent.includes('game.js'), 'index.html includes game.js');
       assert(indexContent.includes('sentences.js'), 'index.html includes sentences.js');
       assert(indexContent.includes('translations.js'), 'index.html includes translations.js');

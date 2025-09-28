@@ -23,6 +23,7 @@ const translations = {
         resetSelection: "Reset Selection",
         sourceLink: "View Source Code on GitHub",
         copyright: "© 2024 Parser Game - Educational Tool",
+        version: "Version: {0}",
         questionOf: "Question {0} of {1}",
         score: "Score: {0}",
         feedback: {
@@ -75,6 +76,7 @@ const translations = {
         resetSelection: "Auswahl zurücksetzen",
         sourceLink: "Quellcode auf GitHub ansehen",
         copyright: "© 2024 Parser-Spiel - Bildungswerkzeug",
+        version: "Version: {0}",
         questionOf: "Frage {0} von {1}",
         score: "Punkte: {0}",
         feedback: {
@@ -127,6 +129,7 @@ const translations = {
         resetSelection: "Selectie resetten",
         sourceLink: "Bekijk broncode op GitHub",
         copyright: "© 2024 Parser Spel - Educatief hulpmiddel",
+        version: "Versie: {0}",
         questionOf: "Vraag {0} van {1}",
         score: "Score: {0}",
         feedback: {

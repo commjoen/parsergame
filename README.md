@@ -109,6 +109,7 @@ Each language contains 250+ unique sentences covering various topics and grammat
 - **Responsive Design**: CSS Grid and Flexbox for all screen sizes
 - **Accessibility**: Semantic HTML and keyboard navigation support
 - **Cross-browser Compatible**: Works in all modern web browsers
+- **Semantic Versioning**: Automatic version management and releases
 
 ## 🤝 Contributing
 
