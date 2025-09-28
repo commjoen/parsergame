@@ -32,6 +32,23 @@ const translations = {
             incorrect: "Not quite right. Try again!",
             missed: "You missed some words.",
             wrongSelection: "Some of your selections were incorrect."
+        },
+        settings: {
+            title: "Game Settings",
+            sentenceCountLabel: "Number of sentences:",
+            timeLimitLabel: "Time limit (optional):",
+            noTimeLimit: "No time limit",
+            applySettings: "Apply Settings",
+            cancelSettings: "Cancel",
+            sentences10: "10 sentences",
+            sentences25: "25 sentences", 
+            sentences50: "50 sentences",
+            sentences100: "100 sentences",
+            sentences250: "250 sentences (default)",
+            time5min: "5 minutes",
+            time10min: "10 minutes",
+            time15min: "15 minutes",
+            time30min: "30 minutes"
         }
     },
     de: {
@@ -67,6 +84,23 @@ const translations = {
             incorrect: "Nicht ganz richtig. Versuchen Sie es nochmal!",
             missed: "Sie haben einige Wörter verpasst.",
             wrongSelection: "Einige Ihrer Auswahlen waren falsch."
+        },
+        settings: {
+            title: "Spieleinstellungen",
+            sentenceCountLabel: "Anzahl der Sätze:",
+            timeLimitLabel: "Zeitlimit (optional):",
+            noTimeLimit: "Kein Zeitlimit",
+            applySettings: "Einstellungen anwenden",
+            cancelSettings: "Abbrechen",
+            sentences10: "10 Sätze",
+            sentences25: "25 Sätze", 
+            sentences50: "50 Sätze",
+            sentences100: "100 Sätze",
+            sentences250: "250 Sätze (Standard)",
+            time5min: "5 Minuten",
+            time10min: "10 Minuten",
+            time15min: "15 Minuten",
+            time30min: "30 Minuten"
         }
     },
     nl: {
@@ -102,6 +136,23 @@ const translations = {
             incorrect: "Niet helemaal goed. Probeer het opnieuw!",
             missed: "Je hebt enkele woorden gemist.",
             wrongSelection: "Enkele van je selecties waren onjuist."
+        },
+        settings: {
+            title: "Spelinstellingen",
+            sentenceCountLabel: "Aantal zinnen:",
+            timeLimitLabel: "Tijdslimiet (optioneel):",
+            noTimeLimit: "Geen tijdslimiet",
+            applySettings: "Instellingen toepassen",
+            cancelSettings: "Annuleren",
+            sentences10: "10 zinnen",
+            sentences25: "25 zinnen", 
+            sentences50: "50 zinnen",
+            sentences100: "100 zinnen",
+            sentences250: "250 zinnen (standaard)",
+            time5min: "5 minuten",
+            time10min: "10 minuten",
+            time15min: "15 minuten",
+            time30min: "30 minuten"
         }
     }
 };
