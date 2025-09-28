@@ -125,6 +125,8 @@ Contributions are welcome! Here are ways to help:
 3. Test with `test.html`
 4. Submit a pull request
 
+**Note**: The site is automatically deployed to GitHub Pages when changes are merged to the main branch via GitHub Actions.
+
 ## 📝 License
 
 This project is licensed under the GPL-3.0 License - see the [LICENSE](LICENSE) file for details.
