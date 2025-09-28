@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parser Game - Learn Sentence Structure</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 id="gameTitle">Parser Game</h1>
+            <p id="gameSubtitle">Learn to parse sentences by identifying grammatical elements</p>
+            
+            <div class="controls">
+                <div class="language-selector">
+                    <label for="language" id="languageLabel">Language:</label>
+                    <select id="language">
+                        <option value="en">English</option>
+                        <option value="de">Deutsch</option>
+                        <option value="nl">Nederlands</option>
+                    </select>
+                </div>
+                
+                <div class="challenge-selector">
+                    <label for="challengeType" id="challengeLabel">Challenge:</label>
+                    <select id="challengeType">
+                        <option value="verbs">Select Verbs</option>
+                        <option value="nouns">Select Nouns</option>
+                        <option value="subject">Select Subject</option>
+                        <option value="predicate">Select Predicate</option>
+                        <option value="adjectives">Select Adjectives</option>
+                    </select>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="game-area">
+                <div class="progress-info">
+                    <span id="questionNumber">Question 1 of 250</span>
+                    <span id="score">Score: 0</span>
+                </div>
+                
+                <div class="instructions" id="instructions">
+                    Click on all the verbs in the sentence below.
+                </div>
+                
+                <div class="sentence-container">
+                    <div id="sentence" class="sentence">
+                        <!-- Sentence words will be dynamically loaded here -->
+                    </div>
+                </div>
+                
+                <div class="game-controls">
+                    <button id="checkAnswer" class="btn btn-primary">Check Answer</button>
+                    <button id="nextQuestion" class="btn btn-secondary" disabled>Next Question</button>
+                    <button id="resetSelection" class="btn btn-outline">Reset Selection</button>
+                </div>
+                
+                <div id="feedback" class="feedback hidden">
+                    <!-- Feedback will be shown here -->
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <p>
+                    <a href="https://github.com/commjoen/parsergame" target="_blank" id="sourceLink">
+                        View Source Code on GitHub
+                    </a>
+                </p>
+                <p id="copyright">&copy; 2024 Parser Game - Educational Tool</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="sentences.js"></script>
+    <script src="translations.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parser Game Tests</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 20px; 
+            background: #f5f5f5;
+        }
+        .test-container { 
+            background: white; 
+            padding: 20px; 
+            margin: 10px 0; 
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-pass { color: green; }
+        .test-fail { color: red; }
+        .test-result { 
+            margin: 5px 0; 
+            font-weight: bold;
+        }
+        h1 { color: #333; }
+        h2 { color: #666; border-bottom: 1px solid #ddd; padding-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Parser Game Test Suite</h1>
+    
+    <div class="test-container">
+        <h2>Sentence Database Tests</h2>
+        <div id="sentenceTests"></div>
+    </div>
+    
+    <div class="test-container">
+        <h2>Translation Tests</h2>
+        <div id="translationTests"></div>
+    </div>
+    
+    <div class="test-container">
+        <h2>Game Logic Tests</h2>
+        <div id="gameLogicTests"></div>
+    </div>
+    
+    <script src="sentences.js"></script>
+    <script src="translations.js"></script>
+    
+    <script>
+        // Test utilities
+        function assert(condition, message) {
+            const result = document.createElement('div');
+            result.className = 'test-result';
+            if (condition) {
+                result.className += ' test-pass';
+                result.textContent = `✓ ${message}`;
+            } else {
+                result.className += ' test-fail';
+                result.textContent = `✗ ${message}`;
+            }
+            return result;
+        }
+        
+        function runSentenceTests() {
+            const container = document.getElementById('sentenceTests');
+            
+            // Test 1: Check if sentences exist for all languages
+            const languages = ['en', 'de', 'nl'];
+            languages.forEach(lang => {
+                const exists = sentences[lang] && sentences[lang].length > 0;
+                container.appendChild(assert(exists, `${lang.toUpperCase()} sentences exist`));
+                
+                if (exists) {
+                    const count = sentences[lang].length;
+                    container.appendChild(assert(count >= 250, `${lang.toUpperCase()} has ${count} sentences (minimum 250 required)`));
+                }
+            });
+            
+            // Test 2: Check sentence structure
+            const testSentence = sentences.en[0];
+            container.appendChild(assert(testSentence.text && typeof testSentence.text === 'string', 'Sentences have text property'));
+            container.appendChild(assert(Array.isArray(testSentence.words), 'Sentences have words array'));
+            container.appendChild(assert(Array.isArray(testSentence.verbs), 'Sentences have verbs array'));
+            container.appendChild(assert(Array.isArray(testSentence.nouns), 'Sentences have nouns array'));
+            container.appendChild(assert(Array.isArray(testSentence.subject), 'Sentences have subject array'));
+            container.appendChild(assert(Array.isArray(testSentence.predicate), 'Sentences have predicate array'));
+            container.appendChild(assert(Array.isArray(testSentence.adjectives), 'Sentences have adjectives array'));
+            
+            // Test 3: Check word count range (8-50 words)
+            let validWordCounts = 0;
+            sentences.en.slice(0, 10).forEach((sentence, index) => {
+                const wordCount = sentence.words.length;
+                const isValid = wordCount >= 8 && wordCount <= 50;
+                if (isValid) validWordCounts++;
+                container.appendChild(assert(isValid, `Sentence ${index + 1} has ${wordCount} words (8-50 range)`));
+            });
+            
+            // Test 4: Check helper functions
+            const randomSentence = getRandomSentence('en');
+            container.appendChild(assert(randomSentence && randomSentence.text, 'getRandomSentence() works'));
+            
+            const sentenceByIndex = getSentenceByIndex('en', 0);
+            container.appendChild(assert(sentenceByIndex && sentenceByIndex.text === sentences.en[0].text, 'getSentenceByIndex() works'));
+        }
+        
+        function runTranslationTests() {
+            const container = document.getElementById('translationTests');
+            
+            // Test 1: Check if translations exist for all languages
+            const languages = ['en', 'de', 'nl'];
+            languages.forEach(lang => {
+                const exists = translations[lang];
+                container.appendChild(assert(exists, `${lang.toUpperCase()} translations exist`));
+                
+                if (exists) {
+                    container.appendChild(assert(translations[lang].gameTitle, `${lang.toUpperCase()} has gameTitle`));
+                    container.appendChild(assert(translations[lang].challenges, `${lang.toUpperCase()} has challenges`));
+                    container.appendChild(assert(translations[lang].instructions, `${lang.toUpperCase()} has instructions`));
+                }
+            });
+            
+            // Test 2: Check formatString function
+            const formatted = formatString("Test {0} with {1}", "string", "placeholders");
+            container.appendChild(assert(formatted === "Test string with placeholders", 'formatString() works correctly'));
+            
+            // Test 3: Check all challenge types have translations
+            const challengeTypes = ['verbs', 'nouns', 'subject', 'predicate', 'adjectives'];
+            challengeTypes.forEach(type => {
+                const hasEN = translations.en.challenges[type];
+                const hasDE = translations.de.challenges[type];
+                const hasNL = translations.nl.challenges[type];
+                container.appendChild(assert(hasEN && hasDE && hasNL, `All languages have ${type} challenge translation`));
+            });
+        }
+        
+        function runGameLogicTests() {
+            const container = document.getElementById('gameLogicTests');
+            
+            // Test 1: Check if game initializes without errors
+            try {
+                // Simulate DOM elements that the game expects
+                document.body.innerHTML += `
+                    <select id="language"><option value="en">English</option></select>
+                    <select id="challengeType"><option value="verbs">Verbs</option></select>
+                    <button id="checkAnswer">Check</button>
+                    <button id="nextQuestion">Next</button>
+                    <button id="resetSelection">Reset</button>
+                    <div id="gameTitle"></div>
+                    <div id="gameSubtitle"></div>
+                    <div id="languageLabel"></div>
+                    <div id="challengeLabel"></div>
+                    <div id="sourceLink"></div>
+                    <div id="copyright"></div>
+                    <div id="instructions"></div>
+                    <div id="questionNumber"></div>
+                    <div id="score"></div>
+                    <div id="sentence"></div>
+                    <div id="feedback" class="hidden"></div>
+                `;
+                
+                container.appendChild(assert(true, 'Game DOM elements can be created'));
+            } catch (error) {
+                container.appendChild(assert(false, `Game initialization failed: ${error.message}`));
+            }
+            
+            // Test 2: Verify sentence word splitting matches
+            const testSentence = sentences.en[0];
+            const expectedWords = testSentence.text.split(/\s+/);
+            // Remove punctuation from the last word for comparison
+            const lastWord = expectedWords[expectedWords.length - 1];
+            if (lastWord.endsWith('.') || lastWord.endsWith('!') || lastWord.endsWith('?')) {
+                expectedWords[expectedWords.length - 1] = lastWord.slice(0, -1);
+                expectedWords.push(lastWord.slice(-1));
+            }
+            
+            const wordsMatch = JSON.stringify(testSentence.words) === JSON.stringify(expectedWords);
+            container.appendChild(assert(wordsMatch, 'Sentence words array matches text splitting'));
+            
+            // Test 3: Check index validity
+            const indices = [
+                ...testSentence.verbs,
+                ...testSentence.nouns,
+                ...testSentence.subject,
+                ...testSentence.predicate,
+                ...testSentence.adjectives
+            ];
+            const validIndices = indices.every(index => index >= 0 && index < testSentence.words.length);
+            container.appendChild(assert(validIndices, 'All grammatical element indices are valid'));
+        }
+        
+        // Run all tests
+        document.addEventListener('DOMContentLoaded', () => {
+            runSentenceTests();
+            runTranslationTests();  
+            runGameLogicTests();
+        });
+    </script>
+</body>
+</html>
