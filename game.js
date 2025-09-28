@@ -22,6 +22,11 @@ class ParserGame {
         this.generateGameSentences();
         this.updateUI();
         this.loadNewQuestion();
+        
+        // Start timer if time limit is set
+        if (this.timeLimit > 0) {
+            this.startTimer();
+        }
     }
     
     loadSettings() {
@@ -31,6 +36,8 @@ class ParserGame {
             const settings = JSON.parse(savedSettings);
             this.totalQuestions = settings.totalQuestions || 250;
             this.timeLimit = settings.timeLimit || 0;
+            this.currentLanguage = settings.language || 'en';
+            this.currentChallenge = settings.challenge || 'verbs';
         }
     }
     
@@ -38,7 +45,9 @@ class ParserGame {
         // Save settings to localStorage
         const settings = {
             totalQuestions: this.totalQuestions,
-            timeLimit: this.timeLimit
+            timeLimit: this.timeLimit,
+            language: this.currentLanguage,
+            challenge: this.currentChallenge
         };
         localStorage.setItem('parserGameSettings', JSON.stringify(settings));
     }
@@ -51,22 +60,6 @@ class ParserGame {
     }
     
     bindEvents() {
-        // Language selector
-        document.getElementById('language').addEventListener('change', (e) => {
-            this.currentLanguage = e.target.value;
-            this.generateGameSentences();
-            this.currentQuestionIndex = 0;
-            this.updateUI();
-            this.loadNewQuestion();
-        });
-        
-        // Challenge selector
-        document.getElementById('challengeType').addEventListener('change', (e) => {
-            this.currentChallenge = e.target.value;
-            this.updateUI();
-            this.loadNewQuestion();
-        });
-        
         // Game control buttons
         document.getElementById('checkAnswer').addEventListener('click', () => {
             this.checkAnswer();
@@ -133,17 +126,6 @@ class ParserGame {
             document.getElementById('cancelSettings').textContent = t.settings.cancelSettings;
         }
         
-        // Update challenge options
-        const challengeSelect = document.getElementById('challengeType');
-        challengeSelect.innerHTML = '';
-        Object.keys(t.challenges).forEach(key => {
-            const option = document.createElement('option');
-            option.value = key;
-            option.textContent = t.challenges[key];
-            challengeSelect.appendChild(option);
-        });
-        challengeSelect.value = this.currentChallenge;
-        
         // Update instructions
         document.getElementById('instructions').textContent = t.instructions[this.currentChallenge];
         
@@ -152,6 +134,9 @@ class ParserGame {
             formatString(t.questionOf, this.currentQuestionIndex + 1, this.totalQuestions);
         document.getElementById('score').textContent = 
             formatString(t.score, this.score);
+            
+        // Update timer display
+        this.updateTimerDisplay();
     }
     
     loadNewQuestion() {
@@ -332,9 +317,10 @@ class ParserGame {
     
     openSettingsModal() {
         const modal = document.getElementById('settingsModal');
-        const t = translations[this.currentLanguage];
         
         // Set current values in the modal
+        document.getElementById('language').value = this.currentLanguage;
+        document.getElementById('challengeType').value = this.currentChallenge;
         document.getElementById('sentenceCount').value = this.totalQuestions;
         document.getElementById('timeLimit').value = this.timeLimit;
         
@@ -351,6 +337,21 @@ class ParserGame {
     updateSettingsDropdowns() {
         const t = translations[this.currentLanguage];
         if (!t.settings) return;
+        
+        // Update language dropdown
+        const languageSelect = document.getElementById('language');
+        languageSelect.value = this.currentLanguage;
+        
+        // Update challenge dropdown
+        const challengeSelect = document.getElementById('challengeType');
+        challengeSelect.innerHTML = '';
+        Object.keys(t.challenges).forEach(key => {
+            const option = document.createElement('option');
+            option.value = key;
+            option.textContent = t.challenges[key];
+            challengeSelect.appendChild(option);
+        });
+        challengeSelect.value = this.currentChallenge;
         
         // Update sentence count dropdown
         const sentenceCountSelect = document.getElementById('sentenceCount');
@@ -376,22 +377,37 @@ class ParserGame {
     }
     
     applySettings() {
+        const newLanguage = document.getElementById('language').value;
+        const newChallenge = document.getElementById('challengeType').value;
         const newTotalQuestions = parseInt(document.getElementById('sentenceCount').value);
         const newTimeLimit = parseInt(document.getElementById('timeLimit').value);
         
         // Update settings
+        this.currentLanguage = newLanguage;
+        this.currentChallenge = newChallenge;
         this.totalQuestions = newTotalQuestions;
         this.timeLimit = newTimeLimit;
         
         // Save settings
         this.saveSettings();
         
-        // Regenerate game sentences with new count
+        // Regenerate game sentences with new count and language
         this.generateGameSentences();
         
         // Reset current game
         this.currentQuestionIndex = 0;
         this.score = 0;
+        
+        // Reset timer if it was running
+        if (this.timer) {
+            clearInterval(this.timer);
+            this.timer = null;
+        }
+        
+        // Start timer if time limit is set
+        if (this.timeLimit > 0) {
+            this.startTimer();
+        }
         
         // Update UI and start new game
         this.updateUI();
@@ -399,6 +415,38 @@ class ParserGame {
         
         // Close modal
         this.closeSettingsModal();
+    }
+    
+    startTimer() {
+        if (this.timeLimit <= 0) return;
+        
+        this.timeLeft = this.timeLimit;
+        this.updateTimerDisplay();
+        
+        this.timer = setInterval(() => {
+            this.timeLeft--;
+            this.updateTimerDisplay();
+            
+            if (this.timeLeft <= 0) {
+                clearInterval(this.timer);
+                this.timer = null;
+                this.endGame();
+            }
+        }, 1000);
+    }
+    
+    updateTimerDisplay() {
+        const timerElement = document.getElementById('timer');
+        
+        if (this.timeLimit <= 0) {
+            timerElement.classList.add('hidden');
+            return;
+        }
+        
+        timerElement.classList.remove('hidden');
+        const minutes = Math.floor(this.timeLeft / 60);
+        const seconds = this.timeLeft % 60;
+        timerElement.textContent = `Time: ${minutes}:${seconds.toString().padStart(2, '0')}`;
     }
     
     endGame() {
