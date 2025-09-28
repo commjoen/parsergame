@@ -5,23 +5,57 @@ class ParserGame {
         this.currentSentence = null;
         this.currentQuestionIndex = 0;
         this.totalQuestions = 250;
+        this.timeLimit = 0; // 0 means no time limit
+        this.timeLeft = 0;
+        this.timer = null;
         this.score = 0;
         this.selectedWords = new Set();
         this.isAnswerChecked = false;
+        this.availableSentences = []; // Array to hold randomized sentences for current game
         
+        this.loadSettings();
         this.init();
     }
     
     init() {
         this.bindEvents();
+        this.generateGameSentences();
         this.updateUI();
         this.loadNewQuestion();
+    }
+    
+    loadSettings() {
+        // Load settings from localStorage
+        const savedSettings = localStorage.getItem('parserGameSettings');
+        if (savedSettings) {
+            const settings = JSON.parse(savedSettings);
+            this.totalQuestions = settings.totalQuestions || 250;
+            this.timeLimit = settings.timeLimit || 0;
+        }
+    }
+    
+    saveSettings() {
+        // Save settings to localStorage
+        const settings = {
+            totalQuestions: this.totalQuestions,
+            timeLimit: this.timeLimit
+        };
+        localStorage.setItem('parserGameSettings', JSON.stringify(settings));
+    }
+    
+    generateGameSentences() {
+        // Get all sentences for current language and create a randomized subset
+        const allSentences = sentences[this.currentLanguage] || sentences.en;
+        const shuffled = [...allSentences].sort(() => 0.5 - Math.random());
+        this.availableSentences = shuffled.slice(0, this.totalQuestions);
     }
     
     bindEvents() {
         // Language selector
         document.getElementById('language').addEventListener('change', (e) => {
             this.currentLanguage = e.target.value;
+            this.generateGameSentences();
+            this.currentQuestionIndex = 0;
             this.updateUI();
             this.loadNewQuestion();
         });
@@ -45,6 +79,30 @@ class ParserGame {
         document.getElementById('resetSelection').addEventListener('click', () => {
             this.resetSelection();
         });
+        
+        // Settings modal
+        document.getElementById('settingsBtn').addEventListener('click', () => {
+            this.openSettingsModal();
+        });
+        
+        document.getElementById('closeSettings').addEventListener('click', () => {
+            this.closeSettingsModal();
+        });
+        
+        document.getElementById('cancelSettings').addEventListener('click', () => {
+            this.closeSettingsModal();
+        });
+        
+        document.getElementById('applySettings').addEventListener('click', () => {
+            this.applySettings();
+        });
+        
+        // Close modal when clicking outside
+        document.getElementById('settingsModal').addEventListener('click', (e) => {
+            if (e.target.id === 'settingsModal') {
+                this.closeSettingsModal();
+            }
+        });
     }
     
     updateUI() {
@@ -60,6 +118,15 @@ class ParserGame {
         document.getElementById('resetSelection').textContent = t.resetSelection;
         document.getElementById('sourceLink').textContent = t.sourceLink;
         document.getElementById('copyright').textContent = t.copyright;
+        
+        // Update settings modal translations
+        if (t.settings) {
+            document.getElementById('settingsTitle').textContent = t.settings.title;
+            document.getElementById('sentenceCountLabel').textContent = t.settings.sentenceCountLabel;
+            document.getElementById('timeLimitLabel').textContent = t.settings.timeLimitLabel;
+            document.getElementById('applySettings').textContent = t.settings.applySettings;
+            document.getElementById('cancelSettings').textContent = t.settings.cancelSettings;
+        }
         
         // Update challenge options
         const challengeSelect = document.getElementById('challengeType');
@@ -83,7 +150,8 @@ class ParserGame {
     }
     
     loadNewQuestion() {
-        this.currentSentence = getSentenceByIndex(this.currentLanguage, this.currentQuestionIndex);
+        // Use the randomized sentence from our available sentences array
+        this.currentSentence = this.availableSentences[this.currentQuestionIndex];
         this.selectedWords.clear();
         this.isAnswerChecked = false;
         
@@ -257,6 +325,77 @@ class ParserGame {
         });
     }
     
+    openSettingsModal() {
+        const modal = document.getElementById('settingsModal');
+        const t = translations[this.currentLanguage];
+        
+        // Set current values in the modal
+        document.getElementById('sentenceCount').value = this.totalQuestions;
+        document.getElementById('timeLimit').value = this.timeLimit;
+        
+        // Update the dropdown options with translations
+        this.updateSettingsDropdowns();
+        
+        modal.classList.remove('hidden');
+    }
+    
+    closeSettingsModal() {
+        document.getElementById('settingsModal').classList.add('hidden');
+    }
+    
+    updateSettingsDropdowns() {
+        const t = translations[this.currentLanguage];
+        if (!t.settings) return;
+        
+        // Update sentence count dropdown
+        const sentenceCountSelect = document.getElementById('sentenceCount');
+        sentenceCountSelect.innerHTML = `
+            <option value="10">${t.settings.sentences10}</option>
+            <option value="25">${t.settings.sentences25}</option>
+            <option value="50">${t.settings.sentences50}</option>
+            <option value="100">${t.settings.sentences100}</option>
+            <option value="250">${t.settings.sentences250}</option>
+        `;
+        sentenceCountSelect.value = this.totalQuestions;
+        
+        // Update time limit dropdown
+        const timeLimitSelect = document.getElementById('timeLimit');
+        timeLimitSelect.innerHTML = `
+            <option value="0">${t.settings.noTimeLimit}</option>
+            <option value="300">${t.settings.time5min}</option>
+            <option value="600">${t.settings.time10min}</option>
+            <option value="900">${t.settings.time15min}</option>
+            <option value="1800">${t.settings.time30min}</option>
+        `;
+        timeLimitSelect.value = this.timeLimit;
+    }
+    
+    applySettings() {
+        const newTotalQuestions = parseInt(document.getElementById('sentenceCount').value);
+        const newTimeLimit = parseInt(document.getElementById('timeLimit').value);
+        
+        // Update settings
+        this.totalQuestions = newTotalQuestions;
+        this.timeLimit = newTimeLimit;
+        
+        // Save settings
+        this.saveSettings();
+        
+        // Regenerate game sentences with new count
+        this.generateGameSentences();
+        
+        // Reset current game
+        this.currentQuestionIndex = 0;
+        this.score = 0;
+        
+        // Update UI and start new game
+        this.updateUI();
+        this.loadNewQuestion();
+        
+        // Close modal
+        this.closeSettingsModal();
+    }
+    
     endGame() {
         const t = translations[this.currentLanguage];
         const finalScore = Math.round((this.score / (this.totalQuestions * 10)) * 100);
@@ -266,6 +405,7 @@ class ParserGame {
         // Reset game
         this.currentQuestionIndex = 0;
         this.score = 0;
+        this.generateGameSentences(); // Generate new random sentences
         this.loadNewQuestion();
         this.updateUI();
     }

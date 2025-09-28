@@ -4,7 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Parser Game - Learn Sentence Structure</title>
+    <meta name="description" content="An interactive web-based game to learn sentence parsing and grammatical analysis in English, German, and Dutch.">
+    <meta name="theme-color" content="#667eea">
     <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgdmlld0JveD0iMCAwIDE5MiAxOTIiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxOTIiIGhlaWdodD0iMTkyIiByeD0iMjQiIGZpbGw9InVybCgjZ3JhZGllbnQwX2xpbmVhcl8xXzEpIi8+CjxkZWZzPgo8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWRpZW50MF9saW5lYXJfMV8xIiB4MT0iMCIgeTE9IjAiIHgyPSIxOTIiIHkyPSIxOTIiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzY2N2VlYSIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiM3NjRiYTIiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8dGV4dCB4PSI5NiIgeT0iMTEwIiBmb250LWZhbWlseT0iYXJpYWwiIGZvbnQtc2l6ZT0iNjAiIGZpbGw9IndoaXRlIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj5QPC90ZXh0Pgo8L3N2Zz4=">
 </head>
 <body>
     <div class="container">
@@ -31,6 +35,13 @@
                         <option value="predicate">Select Predicate</option>
                         <option value="adjectives">Select Adjectives</option>
                     </select>
+                </div>
+                
+                <div class="header-buttons">
+                    <button id="settingsBtn" class="btn btn-icon" title="Game Settings">⚙️</button>
+                    <a href="https://github.com/commjoen/parsergame" target="_blank" class="github-star-btn" title="Star on GitHub">
+                        ⭐ Star
+                    </a>
                 </div>
             </div>
         </header>
@@ -64,6 +75,42 @@
             </div>
         </main>
 
+        <!-- Settings Modal -->
+        <div id="settingsModal" class="modal hidden">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="settingsTitle">Game Settings</h2>
+                    <button class="modal-close" id="closeSettings">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="setting-group">
+                        <label for="sentenceCount" id="sentenceCountLabel">Number of sentences:</label>
+                        <select id="sentenceCount">
+                            <option value="10">10 sentences</option>
+                            <option value="25">25 sentences</option>
+                            <option value="50">50 sentences</option>
+                            <option value="100">100 sentences</option>
+                            <option value="250" selected>250 sentences (default)</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="timeLimit" id="timeLimitLabel">Time limit (optional):</label>
+                        <select id="timeLimit">
+                            <option value="0">No time limit</option>
+                            <option value="300">5 minutes</option>
+                            <option value="600">10 minutes</option>
+                            <option value="900">15 minutes</option>
+                            <option value="1800">30 minutes</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="applySettings" class="btn btn-primary">Apply Settings</button>
+                    <button id="cancelSettings" class="btn btn-secondary">Cancel</button>
+                </div>
+            </div>
+        </div>
+
         <footer>
             <div class="footer-content">
                 <p>
@@ -79,5 +126,20 @@
     <script src="sentences.js"></script>
     <script src="translations.js"></script>
     <script src="game.js"></script>
+    
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
 </body>
 </html>
