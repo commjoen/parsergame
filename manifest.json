@@ -1,14 +1,17 @@
 {
   "name": "Parser Game - Learn Sentence Structure",
   "short_name": "Parser Game",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "An interactive web-based game to learn sentence parsing and grammatical analysis in English, German, and Dutch.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#667eea",
   "theme_color": "#667eea",
   "orientation": "portrait-primary",
-  "categories": ["education", "games"],
+  "categories": [
+    "education",
+    "games"
+  ],
   "lang": "en",
   "icons": [
     {
