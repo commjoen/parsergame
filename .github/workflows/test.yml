@@ -48,13 +48,8 @@ jobs:
           curl -f http://localhost:3000/test.html || exit 1
           echo "Server tests passed"
 
-      - name: Install browser testing dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y chromium-browser
-          
-      - name: Run browser tests
+      - name: Run browser smoke tests
         run: |
           # Simple smoke test - check if page loads without errors
           timeout 30s bash -c 'until curl -s http://localhost:3000/ > /dev/null; do sleep 1; done'
-          echo "Browser tests passed"
+          echo "Browser smoke tests passed"
