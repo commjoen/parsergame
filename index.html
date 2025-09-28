@@ -17,26 +17,6 @@
             <p id="gameSubtitle">Learn to parse sentences by identifying grammatical elements</p>
             
             <div class="controls">
-                <div class="language-selector">
-                    <label for="language" id="languageLabel">Language:</label>
-                    <select id="language">
-                        <option value="en">English</option>
-                        <option value="de">Deutsch</option>
-                        <option value="nl">Nederlands</option>
-                    </select>
-                </div>
-                
-                <div class="challenge-selector">
-                    <label for="challengeType" id="challengeLabel">Challenge:</label>
-                    <select id="challengeType">
-                        <option value="verbs">Select Verbs</option>
-                        <option value="nouns">Select Nouns</option>
-                        <option value="subject">Select Subject</option>
-                        <option value="predicate">Select Predicate</option>
-                        <option value="adjectives">Select Adjectives</option>
-                    </select>
-                </div>
-                
                 <div class="header-buttons">
                     <button id="settingsBtn" class="btn btn-icon" title="Game Settings">⚙️</button>
                     <a href="https://github.com/commjoen/parsergame" target="_blank" class="github-star-btn" title="Star on GitHub">
@@ -50,6 +30,7 @@
             <div class="game-area">
                 <div class="progress-info">
                     <span id="questionNumber">Question 1 of 250</span>
+                    <span id="timer" class="hidden">Time: 0:00</span>
                     <span id="score">Score: 0</span>
                 </div>
                 
@@ -83,6 +64,24 @@
                     <button class="modal-close" id="closeSettings">&times;</button>
                 </div>
                 <div class="modal-body">
+                    <div class="setting-group">
+                        <label for="language" id="languageLabel">Language:</label>
+                        <select id="language">
+                            <option value="en">English</option>
+                            <option value="de">Deutsch</option>
+                            <option value="nl">Nederlands</option>
+                        </select>
+                    </div>
+                    <div class="setting-group">
+                        <label for="challengeType" id="challengeLabel">Challenge:</label>
+                        <select id="challengeType">
+                            <option value="verbs">Select Verbs</option>
+                            <option value="nouns">Select Nouns</option>
+                            <option value="subject">Select Subject</option>
+                            <option value="predicate">Select Predicate</option>
+                            <option value="adjectives">Select Adjectives</option>
+                        </select>
+                    </div>
                     <div class="setting-group">
                         <label for="sentenceCount" id="sentenceCountLabel">Number of sentences:</label>
                         <select id="sentenceCount">
