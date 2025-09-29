@@ -1,6 +1,6 @@
 // Version information for Parser Game
 // This file is automatically updated by the build process
-const APP_VERSION = '1.1.1';
+const APP_VERSION = '1.1.2';
 
 // Export for use in other modules
 if (typeof module !== 'undefined' && module.exports) {
