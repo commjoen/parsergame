@@ -192,7 +192,7 @@ const sentences = {
             verbs: [4],
             nouns: [3, 8],
             subject: [0, 1, 2, 3],
-            predicate: [4, 5, 6, 7, 8],
+            predicate: [4],
             adjectives: [1, 2, 7]
         },
         {
@@ -201,7 +201,7 @@ const sentences = {
             verbs: [2],
             nouns: [1, 5, 7],
             subject: [0, 1],
-            predicate: [2, 3, 4, 5, 6, 7],
+            predicate: [2],
             adjectives: [0, 6]
         },
         {
@@ -210,7 +210,7 @@ const sentences = {
             verbs: [3],
             nouns: [2, 6],
             subject: [0, 1, 2],
-            predicate: [3, 4, 5, 6, 7],
+            predicate: [3, 4, 7],
             adjectives: [1]
         },
         {
@@ -219,7 +219,7 @@ const sentences = {
             verbs: [1],
             nouns: [0, 6],
             subject: [0],
-            predicate: [1, 2, 3, 4, 5, 6],
+            predicate: [1, 2],
             adjectives: [5]
         },
         {
@@ -228,7 +228,7 @@ const sentences = {
             verbs: [4],
             nouns: [3, 9],
             subject: [0, 1, 2, 3],
-            predicate: [4, 5, 6, 7, 8, 9],
+            predicate: [4, 5],
             adjectives: [1, 2, 8]
         },
         {
@@ -237,7 +237,7 @@ const sentences = {
             verbs: [1],
             nouns: [0, 6, 9],
             subject: [0],
-            predicate: [1, 2, 3, 4, 5, 6, 7, 8, 9],
+            predicate: [1, 2],
             adjectives: [5]
         },
         {
@@ -246,7 +246,7 @@ const sentences = {
             verbs: [3],
             nouns: [2, 5, 10],
             subject: [0, 1, 2],
-            predicate: [3, 4, 5, 6, 7, 8, 9, 10],
+            predicate: [3, 6, 7],
             adjectives: [1, 4, 9]
         },
         {
@@ -255,7 +255,7 @@ const sentences = {
             verbs: [2],
             nouns: [1, 7],
             subject: [0, 1],
-            predicate: [2, 3, 4, 5, 6, 7],
+            predicate: [2, 3],
             adjectives: [0, 6]
         },
         {
@@ -305,14 +305,14 @@ function generateAdditionalSentences() {
             "Alle {noun1} {verb} {adj1} {noun2} {prep} einige {adj2} {noun3}."
         ],
         nl: [
-            "De {adj1} {noun1} {verb} {adv} {prep} de {adj2} {noun2}.",
-            "{Adj1} {noun1} {verb} {adj2} {noun2} {prep} de {noun3}.",
-            "De {noun1} {verb} {adv} {prep} {adj1} {noun2}.",
-            "{Noun1} {verb} {adj1} {noun2} {prep} de {adj2} {noun3}.",
-            "Elke {adj1} {noun1} {verb} {adv} {prep} vele {adj2} {noun2}.",
-            "Sommige {adj1} {noun1} {verb} {adj2} {noun2} {prep} elke {noun3}.",
-            "Veel {noun1} {verb} {adv} {prep} {adj1} {noun2}.",
-            "Alle {noun1} {verb} {adj1} {noun2} {prep} sommige {adj2} {noun3}."
+            "De {adj1e} {noun1} {verb} {adv} {prep} de {adj2e} {noun2}.",
+            "{Adj1e} {noun1} {verb} {adj2e} {noun2} {prep} de {noun3}.",
+            "De {noun1} {verb} {adv} {prep} {adj1e} {noun2}.",
+            "{Noun1} {verb} {adj1e} {noun2} {prep} de {adj2e} {noun3}.",
+            "Elke {adj1e} {noun1} {verb} {adv} {prep} vele {adj2e} {noun2}.",
+            "Sommige {adj1e} {noun1} {verb} {adj2e} {noun2} {prep} elke {noun3}.",
+            "Veel {noun1} {verb} {adv} {prep} {adj1e} {noun2}.",
+            "Alle {noun1} {verb} {adj1e} {noun2} {prep} sommige {adj2e} {noun3}."
         ]
     };
 
@@ -339,13 +339,15 @@ function generateAdditionalSentences() {
         },
         nl: {
             adj1: ["snel", "langzaam", "helder", "donker", "groot", "klein", "gelukkig", "verdrietig", "mooi", "lelijk", "slim", "wijs", "jong", "oud", "nieuw", "antiek", "modern", "vers", "schoon", "vuil", "heet", "koud", "warm", "koel", "zwaar", "licht", "sterk", "zwak", "luid", "stil"],
-            adj2: ["groen", "blauw", "rood", "geel", "paars", "oranje", "zwart", "wit", "grijs", "bruin", "roze", "gouden", "zilveren", "kleurrijk", "helder", "dof", "glanzend", "ruig", "glad", "zacht", "hard", "groot", "klein", "enorm", "klein", "rond", "vierkant", "lang", "breed", "smal"],
+            adj1e: ["snelle", "langzame", "heldere", "donkere", "grote", "kleine", "gelukkige", "verdrietige", "mooie", "lelijke", "slimme", "wijze", "jonge", "oude", "nieuwe", "antieke", "moderne", "verse", "schone", "vuile", "hete", "koude", "warme", "koele", "zware", "lichte", "sterke", "zwakke", "luide", "stille"],
+            adj2: ["groen", "blauw", "rood", "geel", "paars", "oranje", "zwart", "wit", "grijs", "bruin", "roze", "gouden", "zilveren", "kleurrijk", "helder", "dof", "glanzend", "ruig", "glad", "zacht", "hard", "groot", "klein", "enorm", "rond", "vierkant", "lang", "breed", "smal"],
+            adj2e: ["groene", "blauwe", "rode", "gele", "paarse", "oranje", "zwarte", "witte", "grijze", "bruine", "roze", "gouden", "zilveren", "kleurrijke", "heldere", "doffe", "glanzende", "ruige", "gladde", "zachte", "harde", "grote", "kleine", "enorme", "ronde", "vierkante", "lange", "brede", "smalle"],
             noun1: ["kat", "hond", "vogel", "paard", "olifant", "leeuw", "tijger", "beer", "konijn", "muis", "leraar", "student", "dokter", "verpleegster", "kok", "kunstenaar", "muzikant", "schrijver", "wetenschapper", "ingenieur", "kind", "volwassene", "persoon", "man", "vrouw", "jongen", "meisje", "vriend", "familie", "team"],
             noun2: ["huis", "boom", "bloem", "tuin", "park", "straat", "gebouw", "school", "ziekenhuis", "bibliotheek", "museum", "restaurant", "winkel", "markt", "brug", "berg", "rivier", "meer", "oceaan", "bos", "veld", "weg", "pad", "deur", "raam", "tafel", "stoel", "boek", "auto", "fiets"],
             noun3: ["ochtend", "avond", "middag", "nacht", "dag", "week", "maand", "jaar", "seizoen", "weer", "regen", "sneeuw", "wind", "zonneschijn", "storm", "wolk", "lucht", "aarde", "wereld", "land", "stad", "dorp", "buurt", "gemeenschap", "samenleving", "cultuur", "traditie", "geschiedenis", "toekomst"],
             verb: ["rent", "loopt", "springt", "vliegt", "zwemt", "klimt", "zit", "staat", "ligt", "slaapt", "eet", "drinkt", "leest", "schrijft", "speelt", "zingt", "danst", "werkt", "studeert", "onderwijst", "leert", "denkt", "spreekt", "luistert", "kijkt", "bekijkt", "ziet", "hoort", "voelt", "ruikt"],
-            adv: ["snel", "langzaam", "voorzichtig", "stil", "luid", "gelukkig", "verdrietig", "mooi", "gracieus", "soepel", "ruw", "zacht", "stevig", "zacht", "hard", "gemakkelijk", "moeilijk", "perfect", "slecht", "goed", "duidelijk", "overduidelijk", "zeker", "waarschijnlijk", "beslist", "gewoonlijk", "altijd", "nooit", "soms", "vaak"],
-            prep: ["in", "op", "onder", "over", "door", "rond", "naast", "dichtbij", "achter", "voor", "boven", "onder", "tussen", "onder", "over", "langs", "tegen", "naar", "weg van", "binnen", "buiten", "zonder", "tijdens", "voor", "na", "sinds", "tot", "door", "voorbij"]
+            adv: ["snel", "langzaam", "voorzichtig", "stil", "luid", "gelukkig", "verdrietig", "mooi", "gracieus", "soepel", "ruw", "zacht", "stevig", "hard", "gemakkelijk", "moeilijk", "perfect", "slecht", "goed", "duidelijk", "overduidelijk", "zeker", "waarschijnlijk", "beslist", "gewoonlijk", "altijd", "nooit", "soms", "vaak"],
+            prep: ["in", "op", "onder", "over", "door", "rond", "naast", "dichtbij", "achter", "voor", "boven", "onder", "tussen", "langs", "tegen", "naar", "binnen", "buiten", "zonder", "tijdens", "na", "sinds", "tot", "voorbij"]
         }
     };
 
@@ -365,6 +367,8 @@ function generateAdditionalSentences() {
             // Select random vocabulary
             const adj1 = vocab.adj1[Math.floor(Math.random() * vocab.adj1.length)];
             const adj2 = vocab.adj2[Math.floor(Math.random() * vocab.adj2.length)];
+            const adj1e = lang === 'nl' ? vocab.adj1e[Math.floor(Math.random() * vocab.adj1e.length)] : adj1;
+            const adj2e = lang === 'nl' ? vocab.adj2e[Math.floor(Math.random() * vocab.adj2e.length)] : adj2;
             const noun1 = vocab.noun1[Math.floor(Math.random() * vocab.noun1.length)];
             const noun2 = vocab.noun2[Math.floor(Math.random() * vocab.noun2.length)];
             const noun3 = vocab.noun3[Math.floor(Math.random() * vocab.noun3.length)];
@@ -378,6 +382,9 @@ function generateAdditionalSentences() {
             
             // Create sentence by replacing placeholders
             let sentence = template
+                .replace(/\{adj1e\}/g, adj1e)
+                .replace(/\{Adj1e\}/g, adj1e.charAt(0).toUpperCase() + adj1e.slice(1))
+                .replace(/\{adj2e\}/g, adj2e)
                 .replace(/\{adj1\}/g, adj1)
                 .replace(/\{Adj1\}/g, adj1.charAt(0).toUpperCase() + adj1.slice(1))
                 .replace(/\{adj2\}/g, adj2)
@@ -411,8 +418,8 @@ function generateAdditionalSentences() {
             
             // Find positions of different word types in the generated words array
             const verbIndex = words.findIndex(word => word.toLowerCase() === verb.toLowerCase());
-            const adj1Index = words.findIndex(word => word.toLowerCase() === adj1.toLowerCase());
-            const adj2Index = words.findIndex((word, index) => index > adj1Index && word.toLowerCase() === adj2.toLowerCase());
+            const adj1Index = words.findIndex(word => word.toLowerCase() === adj1.toLowerCase() || word.toLowerCase() === adj1e.toLowerCase());
+            const adj2Index = words.findIndex((word, index) => index > adj1Index && (word.toLowerCase() === adj2.toLowerCase() || word.toLowerCase() === adj2e.toLowerCase()));
             const noun1Index = words.findIndex(word => word.toLowerCase() === noun1.toLowerCase());
             const noun2Index = words.findIndex((word, index) => index > noun1Index && word.toLowerCase() === noun2.toLowerCase());
             const noun3Index = words.findIndex((word, index) => index > noun2Index && word.toLowerCase() === noun3.toLowerCase());
@@ -438,11 +445,29 @@ function generateAdditionalSentences() {
                 subject = noun1Index >= 0 ? [noun1Index] : [0];
             }
             
-            // Predicate includes verb and everything after
+            // Predicate logic depends on language  
             predicate = [];
             if (verbIndex >= 0) {
-                for (let i = verbIndex; i < words.length; i++) {
-                    predicate.push(i);
+                if (lang === 'nl') {
+                    // For Dutch, predicate includes verb and direct modifiers
+                    predicate.push(verbIndex);
+                    
+                    // Add adverb if it immediately follows the verb
+                    const advIndex = words.findIndex(word => word.toLowerCase() === adv.toLowerCase());
+                    if (advIndex === verbIndex + 1) {
+                        predicate.push(advIndex);
+                    }
+                    
+                    // For Dutch separable verbs (like "af" in "liep...af"), include particle
+                    const possibleParticle = words[words.length - 2]; // second to last word (before punctuation)
+                    if (possibleParticle && ['af', 'aan', 'bij', 'in', 'uit', 'op', 'over', 'door', 'mee', 'weg'].includes(possibleParticle.toLowerCase())) {
+                        predicate.push(words.length - 2);
+                    }
+                } else {
+                    // For other languages, include verb and everything after
+                    for (let i = verbIndex; i < words.length; i++) {
+                        predicate.push(i);
+                    }
                 }
             }
             
