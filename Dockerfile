@@ -1,5 +1,5 @@
 # Use Node.js 24 Alpine as the base image for a lightweight container
-FROM node:24-alpine
+FROM node:25-alpine
 
 # Set the working directory inside the container
 WORKDIR /app
