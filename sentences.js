@@ -7,7 +7,8 @@ const sentences = {
             nouns: [3, 8],
             subject: [0, 1, 2, 3],
             predicate: [4, 5, 6, 7, 8],
-            adjectives: [1, 2, 7]
+            adjectives: [1, 2, 7],
+            prepositions: [5]
         },
         {
             text: "Beautiful flowers bloom in the garden every spring morning.",
@@ -16,7 +17,8 @@ const sentences = {
             nouns: [1, 5, 7, 8],
             subject: [0, 1],
             predicate: [2, 3, 4, 5, 6, 7, 8],
-            adjectives: [0, 6, 7]
+            adjectives: [0, 6, 7],
+            prepositions: [3]
         },
         {
             text: "The old man walked slowly down the street.",
@@ -25,7 +27,8 @@ const sentences = {
             nouns: [2, 7],
             subject: [0, 1, 2],
             predicate: [3, 4, 5, 6, 7],
-            adjectives: [1]
+            adjectives: [1],
+            prepositions: [5]
         },
         {
             text: "Students study hard for their important final examinations.",
@@ -34,7 +37,8 @@ const sentences = {
             nouns: [0, 7],
             subject: [0],
             predicate: [1, 2, 3, 4, 5, 6, 7],
-            adjectives: [5, 6]
+            adjectives: [5, 6],
+            prepositions: [3]
         },
         {
             text: "The bright yellow sun shines warmly through the clear windows.",
@@ -43,7 +47,8 @@ const sentences = {
             nouns: [3, 9],
             subject: [0, 1, 2, 3],
             predicate: [4, 5, 6, 7, 8, 9],
-            adjectives: [1, 2, 8]
+            adjectives: [1, 2, 8],
+            prepositions: [6]
         },
         {
             text: "Children play happily in the colorful playground during recess.",
@@ -52,7 +57,8 @@ const sentences = {
             nouns: [0, 6, 8],
             subject: [0],
             predicate: [1, 2, 3, 4, 5, 6, 7, 8],
-            adjectives: [5]
+            adjectives: [5],
+            prepositions: [3, 7]
         },
         {
             text: "The experienced teacher explains difficult concepts clearly to attentive students.",
@@ -61,7 +67,8 @@ const sentences = {
             nouns: [2, 5, 9],
             subject: [0, 1, 2],
             predicate: [3, 4, 5, 6, 7, 8, 9],
-            adjectives: [1, 4, 8]
+            adjectives: [1, 4, 8],
+            prepositions: [7]
         },
         {
             text: "Heavy rain falls steadily on the green roof.",
@@ -70,7 +77,8 @@ const sentences = {
             nouns: [1, 7],
             subject: [0, 1],
             predicate: [2, 3, 4, 5, 6, 7],
-            adjectives: [0, 6]
+            adjectives: [0, 6],
+            prepositions: [4]
         },
         {
             text: "The curious cat climbs carefully up the tall tree.",
@@ -79,7 +87,8 @@ const sentences = {
             nouns: [2, 8],
             subject: [0, 1, 2],
             predicate: [3, 4, 5, 6, 7, 8],
-            adjectives: [1, 7]
+            adjectives: [1, 7],
+            prepositions: [5]
         },
         {
             text: "Musicians perform beautiful melodies on various musical instruments.",
@@ -88,7 +97,8 @@ const sentences = {
             nouns: [0, 3, 7],
             subject: [0],
             predicate: [1, 2, 3, 4, 5, 6, 7],
-            adjectives: [2, 5, 6]
+            adjectives: [2, 5, 6],
+            prepositions: [4]
         }
         // Adding more English sentences...
     ],
@@ -100,7 +110,8 @@ const sentences = {
             nouns: [3, 8],
             subject: [0, 1, 2, 3],
             predicate: [4, 5, 6, 7, 8],
-            adjectives: [1, 2, 7]
+            adjectives: [1, 2, 7],
+            prepositions: [5]
         },
         {
             text: "Schöne Blumen blühen im Garten jeden Frühlingsmorgen.",
@@ -109,7 +120,8 @@ const sentences = {
             nouns: [1, 4, 6],
             subject: [0, 1],
             predicate: [2, 3, 4, 5, 6],
-            adjectives: [0, 5]
+            adjectives: [0, 5],
+            prepositions: [3]
         },
         {
             text: "Der alte Mann ging langsam die Straße entlang.",
@@ -118,7 +130,8 @@ const sentences = {
             nouns: [2, 6],
             subject: [0, 1, 2],
             predicate: [3, 4, 5, 6, 7],
-            adjectives: [1]
+            adjectives: [1],
+            prepositions: [7]
         },
         {
             text: "Studenten lernen fleißig für ihre wichtigen Abschlussprüfungen.",
@@ -127,7 +140,8 @@ const sentences = {
             nouns: [0, 6],
             subject: [0],
             predicate: [1, 2, 3, 4, 5, 6],
-            adjectives: [5]
+            adjectives: [5],
+            prepositions: [3]
         },
         {
             text: "Die helle gelbe Sonne scheint warm durch die klaren Fenster.",
@@ -136,7 +150,8 @@ const sentences = {
             nouns: [3, 9],
             subject: [0, 1, 2, 3],
             predicate: [4, 5, 6, 7, 8, 9],
-            adjectives: [1, 2, 8]
+            adjectives: [1, 2, 8],
+            prepositions: [6]
         },
         {
             text: "Kinder spielen fröhlich auf dem bunten Spielplatz während der Pause.",
@@ -145,7 +160,8 @@ const sentences = {
             nouns: [0, 6, 9],
             subject: [0],
             predicate: [1, 2, 3, 4, 5, 6, 7, 8, 9],
-            adjectives: [5]
+            adjectives: [5],
+            prepositions: [3, 7]
         },
         {
             text: "Der erfahrene Lehrer erklärt schwierige Konzepte klar den aufmerksamen Schülern.",
@@ -154,7 +170,8 @@ const sentences = {
             nouns: [2, 5, 9],
             subject: [0, 1, 2],
             predicate: [3, 4, 5, 6, 7, 8, 9],
-            adjectives: [1, 4, 8]
+            adjectives: [1, 4, 8],
+            prepositions: []
         },
         {
             text: "Starker Regen fällt stetig auf das grüne Dach.",
@@ -163,7 +180,8 @@ const sentences = {
             nouns: [1, 7],
             subject: [0, 1],
             predicate: [2, 3, 4, 5, 6, 7],
-            adjectives: [0, 6]
+            adjectives: [0, 6],
+            prepositions: [4]
         },
         {
             text: "Die neugierige Katze klettert vorsichtig den hohen Baum hinauf.",
@@ -172,7 +190,8 @@ const sentences = {
             nouns: [2, 7],
             subject: [0, 1, 2],
             predicate: [3, 4, 5, 6, 7, 8],
-            adjectives: [1, 6]
+            adjectives: [1, 6],
+            prepositions: [8]
         },
         {
             text: "Musiker spielen wunderschöne Melodien auf verschiedenen musikalischen Instrumenten.",
@@ -181,7 +200,8 @@ const sentences = {
             nouns: [0, 3, 7],
             subject: [0],
             predicate: [1, 2, 3, 4, 5, 6, 7],
-            adjectives: [2, 5, 6]
+            adjectives: [2, 5, 6],
+            prepositions: [4]
         }
         // Adding more German sentences...
     ],
@@ -193,7 +213,8 @@ const sentences = {
             nouns: [3, 8],
             subject: [0, 1, 2, 3],
             predicate: [4],
-            adjectives: [1, 2, 7]
+            adjectives: [1, 2, 7],
+            prepositions: [5]
         },
         {
             text: "Mooie bloemen bloeien in de tuin elke lenteochtend.",
@@ -202,7 +223,8 @@ const sentences = {
             nouns: [1, 5, 7],
             subject: [0, 1],
             predicate: [2],
-            adjectives: [0, 6]
+            adjectives: [0, 6],
+            prepositions: [3]
         },
         {
             text: "De oude man liep langzaam de straat af.",
@@ -211,7 +233,8 @@ const sentences = {
             nouns: [2, 6],
             subject: [0, 1, 2],
             predicate: [3, 4, 7],
-            adjectives: [1]
+            adjectives: [1],
+            prepositions: [7]
         },
         {
             text: "Studenten studeren hard voor hun belangrijke eindexamens.",
@@ -220,7 +243,8 @@ const sentences = {
             nouns: [0, 6],
             subject: [0],
             predicate: [1, 2],
-            adjectives: [5]
+            adjectives: [5],
+            prepositions: [3]
         },
         {
             text: "De heldere gele zon schijnt warm door de doorzichtige ramen.",
@@ -229,7 +253,8 @@ const sentences = {
             nouns: [3, 9],
             subject: [0, 1, 2, 3],
             predicate: [4, 5],
-            adjectives: [1, 2, 8]
+            adjectives: [1, 2, 8],
+            prepositions: [6]
         },
         {
             text: "Kinderen spelen vrolijk op de kleurrijke speelplaats tijdens de pauze.",
@@ -238,7 +263,8 @@ const sentences = {
             nouns: [0, 6, 9],
             subject: [0],
             predicate: [1, 2],
-            adjectives: [5]
+            adjectives: [5],
+            prepositions: [3, 7]
         },
         {
             text: "De ervaren leraar legt moeilijke concepten duidelijk uit aan aandachtige leerlingen.",
@@ -247,7 +273,8 @@ const sentences = {
             nouns: [2, 5, 10],
             subject: [0, 1, 2],
             predicate: [3, 6, 7],
-            adjectives: [1, 4, 9]
+            adjectives: [1, 4, 9],
+            prepositions: [8]
         },
         {
             text: "Zware regen valt gestaag op het groene dak.",
@@ -256,7 +283,8 @@ const sentences = {
             nouns: [1, 7],
             subject: [0, 1],
             predicate: [2, 3],
-            adjectives: [0, 6]
+            adjectives: [0, 6],
+            prepositions: [4]
         },
         {
             text: "De nieuwsgierige kat klimt voorzichtig in de hoge boom.",
@@ -265,7 +293,8 @@ const sentences = {
             nouns: [2, 8],
             subject: [0, 1, 2],
             predicate: [3, 4, 5, 6, 7, 8],
-            adjectives: [1, 7]
+            adjectives: [1, 7],
+            prepositions: [5]
         },
         {
             text: "Muzikanten spelen prachtige melodieën op verschillende muziekinstrumenten.",
@@ -274,7 +303,8 @@ const sentences = {
             nouns: [0, 3, 6],
             subject: [0],
             predicate: [1, 2, 3, 4, 5, 6],
-            adjectives: [2, 5]
+            adjectives: [2, 5],
+            prepositions: [4]
         }
         // Adding more Dutch sentences...
     ]
@@ -414,7 +444,7 @@ function generateAdditionalSentences() {
             }
             
             // Determine grammatical element positions based on template and vocabulary
-            let verbs, nouns, subject, predicate, adjectives;
+            let verbs, nouns, subject, predicate, adjectives, prepositions;
             
             // Find positions of different word types in the generated words array
             const verbIndex = words.findIndex(word => word.toLowerCase() === verb.toLowerCase());
@@ -423,6 +453,7 @@ function generateAdditionalSentences() {
             const noun1Index = words.findIndex(word => word.toLowerCase() === noun1.toLowerCase());
             const noun2Index = words.findIndex((word, index) => index > noun1Index && word.toLowerCase() === noun2.toLowerCase());
             const noun3Index = words.findIndex((word, index) => index > noun2Index && word.toLowerCase() === noun3.toLowerCase());
+            const prepIndex = words.findIndex(word => word.toLowerCase() === prep.toLowerCase());
             
             // Set grammatical arrays based on found positions
             verbs = verbIndex >= 0 ? [verbIndex] : [];
@@ -435,6 +466,9 @@ function generateAdditionalSentences() {
             adjectives = [];
             if (adj1Index >= 0) adjectives.push(adj1Index);
             if (adj2Index >= 0) adjectives.push(adj2Index);
+            
+            prepositions = [];
+            if (prepIndex >= 0) prepositions.push(prepIndex);
             
             // Subject is typically at the beginning
             if (templateIndex < 4) {
@@ -478,7 +512,8 @@ function generateAdditionalSentences() {
                 nouns: nouns,
                 subject: subject,
                 predicate: predicate,
-                adjectives: adjectives
+                adjectives: adjectives,
+                prepositions: prepositions
             });
         }
         
@@ -486,12 +521,12 @@ function generateAdditionalSentences() {
         return generatedSentences;
     }
     
-    // Generate additional sentences for all languages to reach 250+ per language
+    // Generate additional sentences for all languages to reach 300+ per language
     const languages = ['en', 'de', 'nl'];
     
     languages.forEach(lang => {
         const currentCount = sentences[lang].length;
-        const targetCount = 250;
+        const targetCount = 300;
         
         if (currentCount < targetCount) {
             const additionalNeeded = targetCount - currentCount;

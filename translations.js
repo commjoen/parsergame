@@ -9,14 +9,16 @@ const translations = {
             nouns: "Select Nouns", 
             subject: "Select Subject",
             predicate: "Select Predicate",
-            adjectives: "Select Adjectives"
+            adjectives: "Select Adjectives",
+            prepositions: "Select Prepositions"
         },
         instructions: {
             verbs: "Click on all the verbs in the sentence below.",
             nouns: "Click on all the nouns in the sentence below.",
             subject: "Click on the subject of the sentence below.",
             predicate: "Click on the predicate of the sentence below.",
-            adjectives: "Click on all the adjectives in the sentence below."
+            adjectives: "Click on all the adjectives in the sentence below.",
+            prepositions: "Click on all the prepositions in the sentence below."
         },
         checkAnswer: "Check Answer",
         nextQuestion: "Next Question",
@@ -62,14 +64,16 @@ const translations = {
             nouns: "Substantive auswählen",
             subject: "Subjekt auswählen", 
             predicate: "Prädikat auswählen",
-            adjectives: "Adjektive auswählen"
+            adjectives: "Adjektive auswählen",
+            prepositions: "Präpositionen auswählen"
         },
         instructions: {
             verbs: "Klicken Sie auf alle Verben im folgenden Satz.",
             nouns: "Klicken Sie auf alle Substantive im folgenden Satz.",
             subject: "Klicken Sie auf das Subjekt des folgenden Satzes.",
             predicate: "Klicken Sie auf das Prädikat des folgenden Satzes.",
-            adjectives: "Klicken Sie auf alle Adjektive im folgenden Satz."
+            adjectives: "Klicken Sie auf alle Adjektive im folgenden Satz.",
+            prepositions: "Klicken Sie auf alle Präpositionen im folgenden Satz."
         },
         checkAnswer: "Antwort prüfen",
         nextQuestion: "Nächste Frage",
@@ -115,14 +119,16 @@ const translations = {
             nouns: "Zelfstandige naamwoorden selecteren",
             subject: "Onderwerp selecteren",
             predicate: "Gezegde selecteren", 
-            adjectives: "Bijvoeglijke naamwoorden selecteren"
+            adjectives: "Bijvoeglijke naamwoorden selecteren",
+            prepositions: "Voorzetsels selecteren"
         },
         instructions: {
             verbs: "Klik op alle werkwoorden in de onderstaande zin.",
             nouns: "Klik op alle zelfstandige naamwoorden in de onderstaande zin.",
             subject: "Klik op het onderwerp van de onderstaande zin.",
             predicate: "Klik op het gezegde van de onderstaande zin.",
-            adjectives: "Klik op alle bijvoeglijke naamwoorden in de onderstaande zin."
+            adjectives: "Klik op alle bijvoeglijke naamwoorden in de onderstaande zin.",
+            prepositions: "Klik op alle voorzetsels in de onderstaande zin."
         },
         checkAnswer: "Antwoord controleren",
         nextQuestion: "Volgende vraag",

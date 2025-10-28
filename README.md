@@ -9,13 +9,14 @@ An interactive web-based game to learn sentence parsing and grammatical analysis
 ## 🌟 Features
 
 - **Multi-language Support**: Play in English, German, or Dutch
-- **250+ Sentences**: Each language has over 250 unique sentences (8-50 words each)
-- **5 Challenge Types**:
+- **300+ Sentences**: Each language has over 300 unique sentences (8-50 words each)
+- **6 Challenge Types**:
   - Select all verbs in a sentence
   - Select all nouns in a sentence  
   - Select the subject of a sentence
   - Select the predicate of a sentence
   - Select all adjectives in a sentence
+  - Select all prepositions in a sentence
 - **Interactive UI**: Click on words to select them
 - **Real-time Feedback**: Immediate visual feedback on correct/incorrect selections
 - **Score Tracking**: Points awarded for correct identifications
@@ -101,7 +102,7 @@ parsergame/
 - **Dutch (Nederlands)**: Complete Dutch interface
 
 ### Sentence Languages  
-Each language contains 250+ unique sentences covering various topics and grammatical structures.
+Each language contains 300+ unique sentences covering various topics and grammatical structures.
 
 ## 🛠️ Technical Details
 
