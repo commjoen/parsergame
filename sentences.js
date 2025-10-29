@@ -305,8 +305,528 @@ const sentences = {
             predicate: [1, 2, 3, 4, 5, 6],
             adjectives: [2, 5],
             prepositions: [4]
+        },
+        {
+            text: "De vriendelijke buurman helpt oudere mensen met hun boodschappen.",
+            words: ["De", "vriendelijke", "buurman", "helpt", "oudere", "mensen", "met", "hun", "boodschappen", "."],
+            verbs: [3],
+            nouns: [2, 5, 8],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8],
+            adjectives: [1, 4],
+            prepositions: [6]
+        },
+        {
+            text: "Kleine vogels zingen vrolijke liedjes in de groene bomen.",
+            words: ["Kleine", "vogels", "zingen", "vrolijke", "liedjes", "in", "de", "groene", "bomen", "."],
+            verbs: [2],
+            nouns: [1, 4, 8],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7, 8],
+            adjectives: [0, 3, 7],
+            prepositions: [5]
+        },
+        {
+            text: "De jonge kunstenaar schildert kleurrijke landschappen op grote doeken.",
+            words: ["De", "jonge", "kunstenaar", "schildert", "kleurrijke", "landschappen", "op", "grote", "doeken", "."],
+            verbs: [3],
+            nouns: [2, 5, 8],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8],
+            adjectives: [1, 4, 7],
+            prepositions: [6]
+        },
+        {
+            text: "Hardwerkende studenten maken elke dag belangrijke huiswerkopdrachten voor school.",
+            words: ["Hardwerkende", "studenten", "maken", "elke", "dag", "belangrijke", "huiswerkopdrachten", "voor", "school", "."],
+            verbs: [2],
+            nouns: [1, 4, 6, 8],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7, 8],
+            adjectives: [0, 5],
+            prepositions: [7]
+        },
+        {
+            text: "De warme zomerzon schijnt helder op het blauwe water.",
+            words: ["De", "warme", "zomerzon", "schijnt", "helder", "op", "het", "blauwe", "water", "."],
+            verbs: [3],
+            nouns: [2, 8],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8],
+            adjectives: [1, 7],
+            prepositions: [5]
+        },
+        {
+            text: "Enthousiaste supporters juichen luid voor hun favoriete voetbalteam.",
+            words: ["Enthousiaste", "supporters", "juichen", "luid", "voor", "hun", "favoriete", "voetbalteam", "."],
+            verbs: [2],
+            nouns: [1, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 6],
+            prepositions: [4]
+        },
+        {
+            text: "De moedige brandweerman redt mensen uit het brandende gebouw.",
+            words: ["De", "moedige", "brandweerman", "redt", "mensen", "uit", "het", "brandende", "gebouw", "."],
+            verbs: [3],
+            nouns: [2, 4, 8],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8],
+            adjectives: [1, 7],
+            prepositions: [5]
+        },
+        {
+            text: "Grote schepen varen langzaam door het drukke havengebied.",
+            words: ["Grote", "schepen", "varen", "langzaam", "door", "het", "drukke", "havengebied", "."],
+            verbs: [2],
+            nouns: [1, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 6],
+            prepositions: [4]
+        },
+        {
+            text: "De intelligente docent verklaart complexe wiskundige formules aan aandachtige leerlingen.",
+            words: ["De", "intelligente", "docent", "verklaart", "complexe", "wiskundige", "formules", "aan", "aandachtige", "leerlingen", "."],
+            verbs: [3],
+            nouns: [2, 6, 9],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8, 9],
+            adjectives: [1, 4, 5, 8],
+            prepositions: [7]
+        },
+        {
+            text: "De slimme leerling maakt snel zijn huiswerk in de bibliotheek.",
+            words: ["De", "slimme", "leerling", "maakt", "snel", "zijn", "huiswerk", "in", "de", "bibliotheek", "."],
+            verbs: [3],
+            nouns: [2, 6, 9],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8, 9],
+            adjectives: [1],
+            prepositions: [7]
+        },
+        {
+            text: "De oude kerk staat al eeuwen in het midden van het dorp.",
+            words: ["De", "oude", "kerk", "staat", "al", "eeuwen", "in", "het", "midden", "van", "het", "dorp", "."],
+            verbs: [3],
+            nouns: [2, 5, 8, 11],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8, 9, 10, 11],
+            adjectives: [1],
+            prepositions: [6, 9]
+        },
+        {
+            text: "Vrolijke kinderen bouwen zandkastelen op het warme strand.",
+            words: ["Vrolijke", "kinderen", "bouwen", "zandkastelen", "op", "het", "warme", "strand", "."],
+            verbs: [2],
+            nouns: [1, 3, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 6],
+            prepositions: [4]
+        },
+        {
+            text: "De rode appel valt van de hoge boom in de tuin.",
+            words: ["De", "rode", "appel", "valt", "van", "de", "hoge", "boom", "in", "de", "tuin", "."],
+            verbs: [3],
+            nouns: [2, 7, 10],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8, 9, 10],
+            adjectives: [1, 6],
+            prepositions: [4, 8]
+        },
+        {
+            text: "Wilde ganzen vliegen in formatie naar het zuiden.",
+            words: ["Wilde", "ganzen", "vliegen", "in", "formatie", "naar", "het", "zuiden", "."],
+            verbs: [2],
+            nouns: [1, 4, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0],
+            prepositions: [3, 5]
+        },
+        {
+            text: "De jonge vrouw leest graag spannende boeken in bed.",
+            words: ["De", "jonge", "vrouw", "leest", "graag", "spannende", "boeken", "in", "bed", "."],
+            verbs: [3],
+            nouns: [2, 6, 8],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8],
+            adjectives: [1, 5],
+            prepositions: [7]
+        },
+        {
+            text: "Sterke winden blazen harde sneeuw over de bevroren meren.",
+            words: ["Sterke", "winden", "blazen", "harde", "sneeuw", "over", "de", "bevroren", "meren", "."],
+            verbs: [2],
+            nouns: [1, 4, 8],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7, 8],
+            adjectives: [0, 3, 7],
+            prepositions: [5]
+        },
+        {
+            text: "De bekwame architect ontwerpt moderne gebouwen voor de stad.",
+            words: ["De", "bekwame", "architect", "ontwerpt", "moderne", "gebouwen", "voor", "de", "stad", "."],
+            verbs: [3],
+            nouns: [2, 5, 8],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8],
+            adjectives: [1, 4],
+            prepositions: [6]
+        },
+        {
+            text: "Kleine mieren werken samen aan hun grote mierenhoop.",
+            words: ["Kleine", "mieren", "werken", "samen", "aan", "hun", "grote", "mierenhoop", "."],
+            verbs: [2],
+            nouns: [1, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 6],
+            prepositions: [4]
+        },
+        {
+            text: "De oude bibliotheek bevat duizenden zeldzame manuscripten uit de middeleeuwen.",
+            words: ["De", "oude", "bibliotheek", "bevat", "duizenden", "zeldzame", "manuscripten", "uit", "de", "middeleeuwen", "."],
+            verbs: [3],
+            nouns: [2, 6, 9],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8, 9],
+            adjectives: [1, 5],
+            prepositions: [7]
+        },
+        {
+            text: "De trotse vader speelt voetbal met zijn enthousiaste kinderen.",
+            words: ["De", "trotse", "vader", "speelt", "voetbal", "met", "zijn", "enthousiaste", "kinderen", "."],
+            verbs: [3],
+            nouns: [2, 4, 8],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8],
+            adjectives: [1, 7],
+            prepositions: [5]
+        },
+        {
+            text: "Felgekleurde vlinders fladderen tussen de bloeiende bloemen in het veld.",
+            words: ["Felgekleurde", "vlinders", "fladderen", "tussen", "de", "bloeiende", "bloemen", "in", "het", "veld", "."],
+            verbs: [2],
+            nouns: [1, 6, 9],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7, 8, 9],
+            adjectives: [0, 5],
+            prepositions: [3, 7]
+        },
+        {
+            text: "De getalenteerde pianiste speelt prachtige sonates op het concertpodium.",
+            words: ["De", "getalenteerde", "pianiste", "speelt", "prachtige", "sonates", "op", "het", "concertpodium", "."],
+            verbs: [3],
+            nouns: [2, 5, 8],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8],
+            adjectives: [1, 4],
+            prepositions: [6]
+        },
+        {
+            text: "Hongerige zeemeeuwen cirkelen luid boven de drukke haven.",
+            words: ["Hongerige", "zeemeeuwen", "cirkelen", "luid", "boven", "de", "drukke", "haven", "."],
+            verbs: [2],
+            nouns: [1, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 6],
+            prepositions: [4]
+        },
+        {
+            text: "De witte duiven vliegen rustig over het oude stadhuis.",
+            words: ["De", "witte", "duiven", "vliegen", "rustig", "over", "het", "oude", "stadhuis", "."],
+            verbs: [3],
+            nouns: [2, 8],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8],
+            adjectives: [1, 7],
+            prepositions: [5]
+        },
+        {
+            text: "Jonge studenten leren elke dag nieuwe dingen op de universiteit.",
+            words: ["Jonge", "studenten", "leren", "elke", "dag", "nieuwe", "dingen", "op", "de", "universiteit", "."],
+            verbs: [2],
+            nouns: [1, 4, 6, 9],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7, 8, 9],
+            adjectives: [0, 5],
+            prepositions: [7]
+        },
+        {
+            text: "De oude boer verzorgt zijn dieren goed op de grote boerderij.",
+            words: ["De", "oude", "boer", "verzorgt", "zijn", "dieren", "goed", "op", "de", "grote", "boerderij", "."],
+            verbs: [3],
+            nouns: [2, 5, 10],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8, 9, 10],
+            adjectives: [1, 9],
+            prepositions: [7]
+        },
+        {
+            text: "Mooie vlinders vliegen van bloem naar bloem in de zonnige tuin.",
+            words: ["Mooie", "vlinders", "vliegen", "van", "bloem", "naar", "bloem", "in", "de", "zonnige", "tuin", "."],
+            verbs: [2],
+            nouns: [1, 4, 6, 10],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7, 8, 9, 10],
+            adjectives: [0, 9],
+            prepositions: [3, 5, 7]
+        },
+        {
+            text: "Verstandige mensen lezen regelmatig goede boeken over interessante onderwerpen.",
+            words: ["Verstandige", "mensen", "lezen", "regelmatig", "goede", "boeken", "over", "interessante", "onderwerpen", "."],
+            verbs: [2],
+            nouns: [1, 5, 8],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7, 8],
+            adjectives: [0, 4, 7],
+            prepositions: [6]
+        },
+        {
+            text: "De kleine muis verstopt zich snel onder de oude kast.",
+            words: ["De", "kleine", "muis", "verstopt", "zich", "snel", "onder", "de", "oude", "kast", "."],
+            verbs: [3],
+            nouns: [2, 9],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8, 9],
+            adjectives: [1, 8],
+            prepositions: [6]
+        },
+        {
+            text: "Blije kinderen zingen vrolijke liedjes tijdens de schoolvoorstelling.",
+            words: ["Blije", "kinderen", "zingen", "vrolijke", "liedjes", "tijdens", "de", "schoolvoorstelling", "."],
+            verbs: [2],
+            nouns: [1, 4, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 3],
+            prepositions: [5]
+        },
+        {
+            text: "De sterke wind waait hard door de smalle straten van de stad.",
+            words: ["De", "sterke", "wind", "waait", "hard", "door", "de", "smalle", "straten", "van", "de", "stad", "."],
+            verbs: [3],
+            nouns: [2, 8, 11],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8, 9, 10, 11],
+            adjectives: [1, 7],
+            prepositions: [5, 9]
+        },
+        {
+            text: "Intelligente wetenschappers onderzoeken nieuwe medicijnen in moderne laboratoria.",
+            words: ["Intelligente", "wetenschappers", "onderzoeken", "nieuwe", "medicijnen", "in", "moderne", "laboratoria", "."],
+            verbs: [2],
+            nouns: [1, 4, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 3, 6],
+            prepositions: [5]
+        },
+        {
+            text: "De trouwe hond wacht geduldig op zijn baasje bij de deur.",
+            words: ["De", "trouwe", "hond", "wacht", "geduldig", "op", "zijn", "baasje", "bij", "de", "deur", "."],
+            verbs: [3],
+            nouns: [2, 7, 10],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8, 9, 10],
+            adjectives: [1],
+            prepositions: [5, 8]
+        },
+        {
+            text: "De moderne trein rijdt snel door het groene landschap.",
+            words: ["De", "moderne", "trein", "rijdt", "snel", "door", "het", "groene", "landschap", "."],
+            verbs: [3],
+            nouns: [2, 8],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8],
+            adjectives: [1, 7],
+            prepositions: [5]
+        },
+        {
+            text: "Lieve oma's bakken heerlijke koekjes voor hun kleinkinderen.",
+            words: ["Lieve", "oma's", "bakken", "heerlijke", "koekjes", "voor", "hun", "kleinkinderen", "."],
+            verbs: [2],
+            nouns: [1, 4, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 3],
+            prepositions: [5]
+        },
+        {
+            text: "De volle maan schijnt helder boven de stille nacht.",
+            words: ["De", "volle", "maan", "schijnt", "helder", "boven", "de", "stille", "nacht", "."],
+            verbs: [3],
+            nouns: [2, 8],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8],
+            adjectives: [1, 7],
+            prepositions: [5]
+        },
+        {
+            text: "Prachtige bloemen groeien wild langs de smalle landweg.",
+            words: ["Prachtige", "bloemen", "groeien", "wild", "langs", "de", "smalle", "landweg", "."],
+            verbs: [2],
+            nouns: [1, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 6],
+            prepositions: [4]
+        },
+        {
+            text: "De gezellige koffietent opent vroeg in de ochtend.",
+            words: ["De", "gezellige", "koffietent", "opent", "vroeg", "in", "de", "ochtend", "."],
+            verbs: [3],
+            nouns: [2, 7],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7],
+            adjectives: [1],
+            prepositions: [5]
+        },
+        {
+            text: "Nieuwsgierige toeristen fotograferen oude monumenten in de stad.",
+            words: ["Nieuwsgierige", "toeristen", "fotograferen", "oude", "monumenten", "in", "de", "stad", "."],
+            verbs: [2],
+            nouns: [1, 4, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 3],
+            prepositions: [5]
+        },
+        {
+            text: "Rijpe appels hangen zwaar aan de boomtakken in de boomgaard.",
+            words: ["Rijpe", "appels", "hangen", "zwaar", "aan", "de", "boomtakken", "in", "de", "boomgaard", "."],
+            verbs: [2],
+            nouns: [1, 6, 9],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7, 8, 9],
+            adjectives: [0],
+            prepositions: [4, 7]
+        },
+        {
+            text: "De drukke markt bruist van leven op zaterdagmorgen.",
+            words: ["De", "drukke", "markt", "bruist", "van", "leven", "op", "zaterdagmorgen", "."],
+            verbs: [3],
+            nouns: [2, 5, 7],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7],
+            adjectives: [1],
+            prepositions: [4, 6]
+        },
+        {
+            text: "Vroege vogels zoeken wormen in de natte aarde.",
+            words: ["Vroege", "vogels", "zoeken", "wormen", "in", "de", "natte", "aarde", "."],
+            verbs: [2],
+            nouns: [1, 3, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 6],
+            prepositions: [4]
+        },
+        {
+            text: "De lange brug verbindt twee oevers van de brede rivier.",
+            words: ["De", "lange", "brug", "verbindt", "twee", "oevers", "van", "de", "brede", "rivier", "."],
+            verbs: [3],
+            nouns: [2, 5, 9],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8, 9],
+            adjectives: [1, 8],
+            prepositions: [6]
+        },
+        {
+            text: "Vriendelijke buren groeten elkaar elke morgen hartelijk.",
+            words: ["Vriendelijke", "buren", "groeten", "elkaar", "elke", "morgen", "hartelijk", "."],
+            verbs: [2],
+            nouns: [1, 5],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6],
+            adjectives: [0],
+            prepositions: []
+        },
+        {
+            text: "Sneeuwwitte wolken drijven langzaam door de blauwe lucht.",
+            words: ["Sneeuwwitte", "wolken", "drijven", "langzaam", "door", "de", "blauwe", "lucht", "."],
+            verbs: [2],
+            nouns: [1, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 6],
+            prepositions: [4]
+        },
+        {
+            text: "De bekende schrijver publiceert elk jaar een nieuw boek.",
+            words: ["De", "bekende", "schrijver", "publiceert", "elk", "jaar", "een", "nieuw", "boek", "."],
+            verbs: [3],
+            nouns: [2, 5, 8],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8],
+            adjectives: [1, 7],
+            prepositions: []
+        },
+        {
+            text: "Dappere brandweerlieden blussen grote branden in de stad.",
+            words: ["Dappere", "brandweerlieden", "blussen", "grote", "branden", "in", "de", "stad", "."],
+            verbs: [2],
+            nouns: [1, 4, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 3],
+            prepositions: [5]
+        },
+        {
+            text: "Zachte regendruppels vallen stil op het groene gras.",
+            words: ["Zachte", "regendruppels", "vallen", "stil", "op", "het", "groene", "gras", "."],
+            verbs: [2],
+            nouns: [1, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 6],
+            prepositions: [4]
+        },
+        {
+            text: "De vertrouwde kat slaapt rustig op de warme vensterbank.",
+            words: ["De", "vertrouwde", "kat", "slaapt", "rustig", "op", "de", "warme", "vensterbank", "."],
+            verbs: [3],
+            nouns: [2, 8],
+            subject: [0, 1, 2],
+            predicate: [3, 4, 5, 6, 7, 8],
+            adjectives: [1, 7],
+            prepositions: [5]
+        },
+        {
+            text: "Rustige muziek klinkt zacht uit de oude radio.",
+            words: ["Rustige", "muziek", "klinkt", "zacht", "uit", "de", "oude", "radio", "."],
+            verbs: [2],
+            nouns: [1, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 6],
+            prepositions: [4]
+        },
+        {
+            text: "Verse broodjes ruiken heerlijk in de warme bakkerij.",
+            words: ["Verse", "broodjes", "ruiken", "heerlijk", "in", "de", "warme", "bakkerij", "."],
+            verbs: [2],
+            nouns: [1, 7],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6, 7],
+            adjectives: [0, 6],
+            prepositions: [4]
+        },
+        {
+            text: "Sportieve jongeren fietsen snel door het park.",
+            words: ["Sportieve", "jongeren", "fietsen", "snel", "door", "het", "park", "."],
+            verbs: [2],
+            nouns: [1, 6],
+            subject: [0, 1],
+            predicate: [2, 3, 4, 5, 6],
+            adjectives: [0],
+            prepositions: [4]
         }
-        // Adding more Dutch sentences...
+        // More Dutch sentences will be generated by the system...
     ]
 };
 
@@ -336,13 +856,13 @@ function generateAdditionalSentences() {
         ],
         nl: [
             "De {adj1e} {noun1} {verb} {adv} {prep} de {adj2e} {noun2}.",
-            "{Adj1e} {noun1} {verb} {adj2e} {noun2} {prep} de {noun3}.",
-            "De {noun1} {verb} {adv} {prep} {adj1e} {noun2}.",
-            "{Noun1} {verb} {adj1e} {noun2} {prep} de {adj2e} {noun3}.",
-            "Elke {adj1e} {noun1} {verb} {adv} {prep} vele {adj2e} {noun2}.",
-            "Sommige {adj1e} {noun1} {verb} {adj2e} {noun2} {prep} elke {noun3}.",
-            "Veel {noun1} {verb} {adv} {prep} {adj1e} {noun2}.",
-            "Alle {noun1} {verb} {adj1e} {noun2} {prep} sommige {adj2e} {noun3}."
+            "{Adj1e} {noun1pl} {verb} {adv} {prep} de {adj2e} {noun2}.",
+            "De {noun1} {verb} {adv} {prep} het {adj2e} {noun2}.",
+            "Elke {adj1e} {noun1} {verb} {adv} {prep} de {noun3}.",
+            "{Adj1e} {noun1pl} {verb} {adj2e} {noun2pl} {prep} de {noun3}.",
+            "De {adj1e} {noun1} {verb} {prep} de {adj2e} {noun2}.",
+            "Het {adj1e} {noun1} {verb} {adv} {prep} de {noun3}.",
+            "{Noun1pl} {verb} {adv} {prep} het {adj2e} {noun2}."
         ]
     };
 
@@ -368,16 +888,18 @@ function generateAdditionalSentences() {
             prep: ["in", "auf", "unter", "über", "durch", "um", "neben", "nahe", "hinter", "vor", "oberhalb", "unterhalb", "zwischen", "unter", "über", "entlang", "gegen", "zu", "weg von", "innerhalb", "außerhalb", "ohne", "während", "vor", "nach", "seit", "bis", "durch", "jenseits"]
         },
         nl: {
-            adj1: ["snel", "langzaam", "helder", "donker", "groot", "klein", "gelukkig", "verdrietig", "mooi", "lelijk", "slim", "wijs", "jong", "oud", "nieuw", "antiek", "modern", "vers", "schoon", "vuil", "heet", "koud", "warm", "koel", "zwaar", "licht", "sterk", "zwak", "luid", "stil"],
-            adj1e: ["snelle", "langzame", "heldere", "donkere", "grote", "kleine", "gelukkige", "verdrietige", "mooie", "lelijke", "slimme", "wijze", "jonge", "oude", "nieuwe", "antieke", "moderne", "verse", "schone", "vuile", "hete", "koude", "warme", "koele", "zware", "lichte", "sterke", "zwakke", "luide", "stille"],
-            adj2: ["groen", "blauw", "rood", "geel", "paars", "oranje", "zwart", "wit", "grijs", "bruin", "roze", "gouden", "zilveren", "kleurrijk", "helder", "dof", "glanzend", "ruig", "glad", "zacht", "hard", "groot", "klein", "enorm", "rond", "vierkant", "lang", "breed", "smal"],
-            adj2e: ["groene", "blauwe", "rode", "gele", "paarse", "oranje", "zwarte", "witte", "grijze", "bruine", "roze", "gouden", "zilveren", "kleurrijke", "heldere", "doffe", "glanzende", "ruige", "gladde", "zachte", "harde", "grote", "kleine", "enorme", "ronde", "vierkante", "lange", "brede", "smalle"],
-            noun1: ["kat", "hond", "vogel", "paard", "olifant", "leeuw", "tijger", "beer", "konijn", "muis", "leraar", "student", "dokter", "verpleegster", "kok", "kunstenaar", "muzikant", "schrijver", "wetenschapper", "ingenieur", "kind", "volwassene", "persoon", "man", "vrouw", "jongen", "meisje", "vriend", "familie", "team"],
-            noun2: ["huis", "boom", "bloem", "tuin", "park", "straat", "gebouw", "school", "ziekenhuis", "bibliotheek", "museum", "restaurant", "winkel", "markt", "brug", "berg", "rivier", "meer", "oceaan", "bos", "veld", "weg", "pad", "deur", "raam", "tafel", "stoel", "boek", "auto", "fiets"],
-            noun3: ["ochtend", "avond", "middag", "nacht", "dag", "week", "maand", "jaar", "seizoen", "weer", "regen", "sneeuw", "wind", "zonneschijn", "storm", "wolk", "lucht", "aarde", "wereld", "land", "stad", "dorp", "buurt", "gemeenschap", "samenleving", "cultuur", "traditie", "geschiedenis", "toekomst"],
-            verb: ["rent", "loopt", "springt", "vliegt", "zwemt", "klimt", "zit", "staat", "ligt", "slaapt", "eet", "drinkt", "leest", "schrijft", "speelt", "zingt", "danst", "werkt", "studeert", "onderwijst", "leert", "denkt", "spreekt", "luistert", "kijkt", "bekijkt", "ziet", "hoort", "voelt", "ruikt"],
-            adv: ["snel", "langzaam", "voorzichtig", "stil", "luid", "gelukkig", "verdrietig", "mooi", "gracieus", "soepel", "ruw", "zacht", "stevig", "hard", "gemakkelijk", "moeilijk", "perfect", "slecht", "goed", "duidelijk", "overduidelijk", "zeker", "waarschijnlijk", "beslist", "gewoonlijk", "altijd", "nooit", "soms", "vaak"],
-            prep: ["in", "op", "onder", "over", "door", "rond", "naast", "dichtbij", "achter", "voor", "boven", "onder", "tussen", "langs", "tegen", "naar", "binnen", "buiten", "zonder", "tijdens", "na", "sinds", "tot", "voorbij"]
+            adj1: ["snel", "langzaam", "helder", "donker", "groot", "klein", "gelukkig", "verdrietig", "mooi", "lelijk", "slim", "wijs", "jong", "oud", "nieuw", "modern", "vers", "schoon", "warm", "koel", "zwaar", "licht", "sterk", "zwak", "stil"],
+            adj1e: ["snelle", "langzame", "heldere", "donkere", "grote", "kleine", "gelukkige", "verdrietige", "mooie", "lelijke", "slimme", "wijze", "jonge", "oude", "nieuwe", "moderne", "verse", "schone", "warme", "koele", "zware", "lichte", "sterke", "zwakke", "stille"],
+            adj2: ["groen", "blauw", "rood", "geel", "wit", "zwart", "kleurrijk", "helder", "glanzend", "glad", "zacht", "hard", "groot", "klein", "lang", "breed"],
+            adj2e: ["groene", "blauwe", "rode", "gele", "witte", "zwarte", "kleurrijke", "heldere", "glanzende", "gladde", "zachte", "harde", "grote", "kleine", "lange", "brede"],
+            noun1: ["kat", "hond", "vogel", "paard", "kind", "leraar", "student", "dokter", "kunstenaar", "muzikant", "schrijver", "man", "vrouw", "jongen", "meisje", "vriend"],
+            noun1pl: ["katten", "honden", "vogels", "paarden", "kinderen", "leraren", "studenten", "dokters", "kunstenaars", "muzikanten", "schrijvers", "mannen", "vrouwen", "jongens", "meisjes", "vrienden"],
+            noun2: ["huis", "boom", "bloem", "tuin", "park", "straat", "gebouw", "school", "museum", "restaurant", "markt", "brug", "rivier", "meer", "bos", "veld", "weg", "pad", "raam", "tafel", "stoel", "boek"],
+            noun2pl: ["huizen", "bomen", "bloemen", "tuinen", "parken", "straten", "gebouwen", "scholen", "musea", "restaurants", "markten", "bruggen", "rivieren", "meren", "bossen", "velden", "wegen", "paden", "ramen", "tafels", "stoelen", "boeken"],
+            noun3: ["ochtend", "avond", "middag", "nacht", "dag", "week", "maand", "jaar", "seizoen", "zomer", "winter", "lente", "herfst", "stad", "dorp"],
+            verb: ["rent", "loopt", "springt", "vliegt", "zwemt", "klimt", "zit", "staat", "slaapt", "eet", "drinkt", "leest", "schrijft", "speelt", "zingt", "danst", "werkt", "studeert", "leert", "denkt", "spreekt", "luistert", "kijkt", "ziet", "hoort", "voelt"],
+            adv: ["snel", "langzaam", "voorzichtig", "stil", "gelukkig", "mooi", "goed", "duidelijk", "zeker", "gewoonlijk", "altijd", "nooit", "soms", "vaak", "graag", "rustig", "vrolijk", "hard"],
+            prep: ["in", "op", "onder", "over", "door", "naast", "achter", "voor", "boven", "tussen", "langs", "naar", "bij", "tijdens", "na", "tot"]
         }
     };
 
@@ -400,7 +922,9 @@ function generateAdditionalSentences() {
             const adj1e = lang === 'nl' ? vocab.adj1e[Math.floor(Math.random() * vocab.adj1e.length)] : adj1;
             const adj2e = lang === 'nl' ? vocab.adj2e[Math.floor(Math.random() * vocab.adj2e.length)] : adj2;
             const noun1 = vocab.noun1[Math.floor(Math.random() * vocab.noun1.length)];
+            const noun1pl = lang === 'nl' && vocab.noun1pl ? vocab.noun1pl[Math.floor(Math.random() * vocab.noun1pl.length)] : noun1 + 's';
             const noun2 = vocab.noun2[Math.floor(Math.random() * vocab.noun2.length)];
+            const noun2pl = lang === 'nl' && vocab.noun2pl ? vocab.noun2pl[Math.floor(Math.random() * vocab.noun2pl.length)] : noun2 + 's';
             const noun3 = vocab.noun3[Math.floor(Math.random() * vocab.noun3.length)];
             const verb = vocab.verb[Math.floor(Math.random() * vocab.verb.length)];
             const adv = vocab.adv[Math.floor(Math.random() * vocab.adv.length)];
@@ -418,6 +942,9 @@ function generateAdditionalSentences() {
                 .replace(/\{adj1\}/g, adj1)
                 .replace(/\{Adj1\}/g, adj1.charAt(0).toUpperCase() + adj1.slice(1))
                 .replace(/\{adj2\}/g, adj2)
+                .replace(/\{noun1pl\}/g, noun1pl)
+                .replace(/\{Noun1pl\}/g, noun1pl.charAt(0).toUpperCase() + noun1pl.slice(1))
+                .replace(/\{noun2pl\}/g, noun2pl)
                 .replace(/\{noun1\}/g, noun1)
                 .replace(/\{Noun1\}/g, noun1.charAt(0).toUpperCase() + noun1.slice(1))
                 .replace(/\{noun2\}/g, noun2)
