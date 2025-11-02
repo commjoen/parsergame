@@ -13,6 +13,10 @@ class ParserGame {
         this.isAnswerChecked = false;
         this.availableSentences = []; // Array to hold randomized sentences for current game
         
+        // Array of challenge types for mixed mode rotation
+        this.challengeTypes = ['verbs', 'nouns', 'subject', 'predicate', 'adjectives', 'prepositions'];
+        this.actualChallengeType = 'verbs'; // The actual challenge type for current question in mixed mode
+        
         this.loadSettings();
         this.init();
     }
@@ -155,7 +159,8 @@ class ParserGame {
         }
         
         // Update instructions
-        document.getElementById('instructions').textContent = t.instructions[this.currentChallenge];
+        const challengeForInstructions = this.currentChallenge === 'mixed' ? this.actualChallengeType : this.currentChallenge;
+        document.getElementById('instructions').textContent = t.instructions[challengeForInstructions];
         
         // Update progress
         document.getElementById('questionNumber').textContent = 
@@ -173,6 +178,13 @@ class ParserGame {
         this.selectedWords.clear();
         this.isAnswerChecked = false;
         
+        // In mixed mode, rotate through different challenge types
+        if (this.currentChallenge === 'mixed') {
+            this.actualChallengeType = this.challengeTypes[this.currentQuestionIndex % this.challengeTypes.length];
+        } else {
+            this.actualChallengeType = this.currentChallenge;
+        }
+        
         // Enable/disable buttons
         document.getElementById('checkAnswer').disabled = false;
         document.getElementById('nextQuestion').disabled = true;
@@ -183,9 +195,10 @@ class ParserGame {
         // Render sentence
         this.renderSentence();
         
-        // Update instructions for current challenge
+        // Update instructions
         const t = translations[this.currentLanguage];
-        document.getElementById('instructions').textContent = t.instructions[this.currentChallenge];
+        const challengeForInstructions = this.currentChallenge === 'mixed' ? this.actualChallengeType : this.currentChallenge;
+        document.getElementById('instructions').textContent = t.instructions[challengeForInstructions];
     }
     
     renderSentence() {
@@ -224,7 +237,7 @@ class ParserGame {
         if (this.isAnswerChecked) return;
         
         this.isAnswerChecked = true;
-        const correctAnswers = new Set(this.currentSentence[this.currentChallenge]);
+        const correctAnswers = new Set(this.currentSentence[this.actualChallengeType]);
         
         // Calculate results
         const correctSelections = [];

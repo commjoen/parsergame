@@ -10,13 +10,14 @@ An interactive web-based game to learn sentence parsing and grammatical analysis
 
 - **Multi-language Support**: Play in English, German, or Dutch
 - **300+ Sentences**: Each language has over 300 unique sentences (8-50 words each)
-- **6 Challenge Types**:
+- **7 Challenge Types**:
   - Select all verbs in a sentence
   - Select all nouns in a sentence  
   - Select the subject of a sentence
   - Select the predicate of a sentence
   - Select all adjectives in a sentence
   - Select all prepositions in a sentence
+  - **Mixed Mode**: Every question asks for a different grammatical element (rotates through all types)
 - **Interactive UI**: Click on words to select them
 - **Real-time Feedback**: Immediate visual feedback on correct/incorrect selections
 - **Score Tracking**: Points awarded for correct identifications
