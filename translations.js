@@ -10,7 +10,8 @@ const translations = {
             subject: "Select Subject",
             predicate: "Select Predicate",
             adjectives: "Select Adjectives",
-            prepositions: "Select Prepositions"
+            prepositions: "Select Prepositions",
+            mixed: "Mixed Mode (All Types)"
         },
         instructions: {
             verbs: "Click on all the verbs in the sentence below.",
@@ -18,7 +19,8 @@ const translations = {
             subject: "Click on the subject of the sentence below.",
             predicate: "Click on the predicate of the sentence below.",
             adjectives: "Click on all the adjectives in the sentence below.",
-            prepositions: "Click on all the prepositions in the sentence below."
+            prepositions: "Click on all the prepositions in the sentence below.",
+            mixed: "Click on the indicated grammatical element in the sentence below."
         },
         checkAnswer: "Check Answer",
         nextQuestion: "Next Question",
@@ -40,6 +42,7 @@ const translations = {
             title: "Game Settings",
             sentenceCountLabel: "Number of sentences:",
             timeLimitLabel: "Time limit (optional):",
+            mixedModeTypesLabel: "Select challenge types for mixed mode:",
             noTimeLimit: "No time limit",
             applySettings: "Apply Settings",
             cancelSettings: "Cancel",
@@ -65,7 +68,8 @@ const translations = {
             subject: "Subjekt auswählen", 
             predicate: "Prädikat auswählen",
             adjectives: "Adjektive auswählen",
-            prepositions: "Präpositionen auswählen"
+            prepositions: "Präpositionen auswählen",
+            mixed: "Gemischter Modus (Alle Typen)"
         },
         instructions: {
             verbs: "Klicken Sie auf alle Verben im folgenden Satz.",
@@ -73,7 +77,8 @@ const translations = {
             subject: "Klicken Sie auf das Subjekt des folgenden Satzes.",
             predicate: "Klicken Sie auf das Prädikat des folgenden Satzes.",
             adjectives: "Klicken Sie auf alle Adjektive im folgenden Satz.",
-            prepositions: "Klicken Sie auf alle Präpositionen im folgenden Satz."
+            prepositions: "Klicken Sie auf alle Präpositionen im folgenden Satz.",
+            mixed: "Klicken Sie auf das angegebene grammatische Element im folgenden Satz."
         },
         checkAnswer: "Antwort prüfen",
         nextQuestion: "Nächste Frage",
@@ -95,6 +100,7 @@ const translations = {
             title: "Spieleinstellungen",
             sentenceCountLabel: "Anzahl der Sätze:",
             timeLimitLabel: "Zeitlimit (optional):",
+            mixedModeTypesLabel: "Herausforderungstypen für gemischten Modus auswählen:",
             noTimeLimit: "Kein Zeitlimit",
             applySettings: "Einstellungen anwenden",
             cancelSettings: "Abbrechen",
@@ -120,7 +126,8 @@ const translations = {
             subject: "Onderwerp selecteren",
             predicate: "Gezegde selecteren", 
             adjectives: "Bijvoeglijke naamwoorden selecteren",
-            prepositions: "Voorzetsels selecteren"
+            prepositions: "Voorzetsels selecteren",
+            mixed: "Gemengde modus (Alle typen)"
         },
         instructions: {
             verbs: "Klik op alle werkwoorden in de onderstaande zin.",
@@ -128,7 +135,8 @@ const translations = {
             subject: "Klik op het onderwerp van de onderstaande zin.",
             predicate: "Klik op het gezegde van de onderstaande zin.",
             adjectives: "Klik op alle bijvoeglijke naamwoorden in de onderstaande zin.",
-            prepositions: "Klik op alle voorzetsels in de onderstaande zin."
+            prepositions: "Klik op alle voorzetsels in de onderstaande zin.",
+            mixed: "Klik op het aangegeven grammaticale element in de onderstaande zin."
         },
         checkAnswer: "Antwoord controleren",
         nextQuestion: "Volgende vraag",
@@ -150,6 +158,7 @@ const translations = {
             title: "Spelinstellingen",
             sentenceCountLabel: "Aantal zinnen:",
             timeLimitLabel: "Tijdslimiet (optioneel):",
+            mixedModeTypesLabel: "Selecteer uitdagingstypen voor gemengde modus:",
             noTimeLimit: "Geen tijdslimiet",
             applySettings: "Instellingen toepassen",
             cancelSettings: "Annuleren",

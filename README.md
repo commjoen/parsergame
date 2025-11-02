@@ -17,6 +17,7 @@ An interactive web-based game to learn sentence parsing and grammatical analysis
   - Select the predicate of a sentence
   - Select all adjectives in a sentence
   - Select all prepositions in a sentence
+- **Mixed Mode**: Challenge yourself by rotating through all grammatical elements—every question asks for a different type
 - **Interactive UI**: Click on words to select them
 - **Real-time Feedback**: Immediate visual feedback on correct/incorrect selections
 - **Score Tracking**: Points awarded for correct identifications
