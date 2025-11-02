@@ -15,6 +15,7 @@ class ParserGame {
         
         // Array of challenge types for mixed mode rotation
         this.challengeTypes = ['verbs', 'nouns', 'subject', 'predicate', 'adjectives', 'prepositions'];
+        this.mixedModeTypes = ['verbs', 'nouns', 'subject', 'predicate', 'adjectives', 'prepositions']; // User-selected types for mixed mode
         this.actualChallengeType = 'verbs'; // The actual challenge type for current question in mixed mode
         
         this.loadSettings();
@@ -42,6 +43,7 @@ class ParserGame {
             this.timeLimit = settings.timeLimit || 0;
             this.currentLanguage = settings.language || 'en';
             this.currentChallenge = settings.challenge || 'verbs';
+            this.mixedModeTypes = settings.mixedModeTypes || ['verbs', 'nouns', 'subject', 'predicate', 'adjectives', 'prepositions'];
         }
     }
     
@@ -51,7 +53,8 @@ class ParserGame {
             totalQuestions: this.totalQuestions,
             timeLimit: this.timeLimit,
             language: this.currentLanguage,
-            challenge: this.currentChallenge
+            challenge: this.currentChallenge,
+            mixedModeTypes: this.mixedModeTypes
         };
         localStorage.setItem('parserGameSettings', JSON.stringify(settings));
     }
@@ -128,6 +131,11 @@ class ParserGame {
                 this.closeSettingsModal();
             }
         });
+        
+        // Show/hide mixed mode options when challenge type changes
+        document.getElementById('challengeType').addEventListener('change', (e) => {
+            this.toggleMixedModeOptions(e.target.value === 'mixed');
+        });
     }
     
     updateUI() {
@@ -180,7 +188,9 @@ class ParserGame {
         
         // In mixed mode, rotate through different challenge types
         if (this.currentChallenge === 'mixed') {
-            this.actualChallengeType = this.challengeTypes[this.currentQuestionIndex % this.challengeTypes.length];
+            // Use only the selected mixed mode types
+            const selectedTypes = this.mixedModeTypes.length > 0 ? this.mixedModeTypes : this.challengeTypes;
+            this.actualChallengeType = selectedTypes[this.currentQuestionIndex % selectedTypes.length];
         } else {
             this.actualChallengeType = this.currentChallenge;
         }
@@ -415,6 +425,46 @@ class ParserGame {
             <option value="1800">${t.settings.time30min}</option>
         `;
         timeLimitSelect.value = this.timeLimit;
+        
+        // Update mixed mode options label
+        document.getElementById('mixedModeTypesLabel').textContent = t.settings.mixedModeTypesLabel;
+        
+        // Update mixed mode checkbox labels
+        document.getElementById('mixedVerbs').textContent = t.challenges.verbs;
+        document.getElementById('mixedNouns').textContent = t.challenges.nouns;
+        document.getElementById('mixedSubject').textContent = t.challenges.subject;
+        document.getElementById('mixedPredicate').textContent = t.challenges.predicate;
+        document.getElementById('mixedAdjectives').textContent = t.challenges.adjectives;
+        document.getElementById('mixedPrepositions').textContent = t.challenges.prepositions;
+        
+        // Set checkbox states based on saved mixed mode types
+        this.updateMixedModeCheckboxes();
+        
+        // Show/hide mixed mode options based on current challenge
+        this.toggleMixedModeOptions(this.currentChallenge === 'mixed');
+    }
+    
+    toggleMixedModeOptions(show) {
+        const mixedModeOptions = document.getElementById('mixedModeOptions');
+        if (show) {
+            mixedModeOptions.style.display = 'block';
+        } else {
+            mixedModeOptions.style.display = 'none';
+        }
+    }
+    
+    updateMixedModeCheckboxes() {
+        const checkboxes = document.querySelectorAll('.mixed-type-checkbox');
+        checkboxes.forEach(checkbox => {
+            checkbox.checked = this.mixedModeTypes.includes(checkbox.value);
+        });
+    }
+    
+    getMixedModeTypesFromCheckboxes() {
+        const checkboxes = document.querySelectorAll('.mixed-type-checkbox:checked');
+        const selectedTypes = Array.from(checkboxes).map(cb => cb.value);
+        // Ensure at least one type is selected
+        return selectedTypes.length > 0 ? selectedTypes : ['verbs'];
     }
     
     applySettings() {
@@ -423,11 +473,15 @@ class ParserGame {
         const newTotalQuestions = parseInt(document.getElementById('sentenceCount').value);
         const newTimeLimit = parseInt(document.getElementById('timeLimit').value);
         
+        // Get selected mixed mode types from checkboxes
+        const newMixedModeTypes = this.getMixedModeTypesFromCheckboxes();
+        
         // Update settings
         this.currentLanguage = newLanguage;
         this.currentChallenge = newChallenge;
         this.totalQuestions = newTotalQuestions;
         this.timeLimit = newTimeLimit;
+        this.mixedModeTypes = newMixedModeTypes;
         
         // Save settings
         this.saveSettings();
